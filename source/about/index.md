@@ -56,5 +56,5 @@ windows11Pro
 Hexo 文件托管于：[GitHub](https://github.com/)
 Hexo 部署：[Netlify](https://www.netlify.com/)
 后端服务提供：[Zeabur](https://zeabur.com)
-主题：[ANZHIYU](https://docs.anheyu.com/) with [Zyx_2012-Theme](https://hexo.zyx-2012.cn)
+主题：[ANZHIYU](https://docs.anheyu.com/) with [Zyx_2012-Theme](https://blog.zyx-2012.cn)
 

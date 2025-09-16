@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hexo.zyx-2012.cn/sitemap.xml
+Sitemap: https://blog.zyx-2012.cn/sitemap.xml
