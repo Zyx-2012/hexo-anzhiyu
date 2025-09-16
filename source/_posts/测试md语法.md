@@ -1,7 +1,8 @@
 ---
-title: 测试
-date: 2025-09-13 20:35:34
-abbrlink: 9daba997
+title: 测试md语法
+date: 2025-09-16 21:22:10
+abbrlink: 20250916
+cover:/img/blog/测试md语法/新博客.webp
 ---
 
 # Markdown 测试文件
