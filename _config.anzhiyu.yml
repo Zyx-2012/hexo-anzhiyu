@@ -12,9 +12,9 @@ menu:
      留言板: /comments/ || anzhiyu-icon-envelope
 
    我的:
+     关于我: /about/ || anzhiyu-icon-paper-plane
      音乐馆: /music/?id=14288163236&server=netease || anzhiyu-icon-music
     #  追番页: /bangumis/ || anzhiyu-icon-bilibili
-     关于我: /about/ || anzhiyu-icon-paper-plane
      闲言碎语: /essay/ || anzhiyu-icon-lightbulb
      # 相册集: /album/ || anzhiyu-icon-images
      # 小空调: /air-conditioner/ || anzhiyu-icon-fan
