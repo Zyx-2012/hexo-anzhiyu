@@ -84,8 +84,8 @@
   };
 
   const LatestComments = {
-    API_URL: 'https://twikoo.mcxiaochen.top/',
-    ADMIN_EMAIL_MD5: '36cba7a8f3897ad01330dd4e856934d5501bdf7268b2b7a14a968fb6335f074c',
+    API_URL: 'https://twikoo.zyx-2012.cn/',
+    ADMIN_EMAIL_MD5: '78e24d432c70a7b3262693644ed941c9',
     PAGE_SIZE: 5,
     LOADING_GIF: 'https://lib.bsgun.cn/Hexo-static/img/loading.gif',
   
