@@ -10,7 +10,18 @@ details[open]:not(.tk-admin-config-group) {
 }
 [data-theme="dark"]
   details.folding-tag
-   background: transparent
+    background: rgba(0, 0, 0, 0.3)
+    backdrop-filter: blur(10px)
+    -webkit-backdrop-filter: blur(10px)
+    border: 1px solid rgba(255,255,255,0.1)
+    border-radius: 14px
+    color: rgba(255, 255, 255, 0.8)
+
+
+作者: mcxiaochenn
+链接: https://blog.mcxiaochen.top/posts/p9b691fc1/
+来源: 辰渊尘の个人博客
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 details.folding-tag
   display: block
   padding: 16px
@@ -128,13 +139,10 @@ details.folding-tag[open]
           margin-bottom: 0
 [data-theme="dark"]
   details[open]
-    & > div
-      &.content
-        padding 16px
-        margin -16px
-        margin-top 0
-        background: transparent;
-        color rgba(255, 255, 255, 0.6)
+  details.folding-tag[open]
+    > div.content
+      background: transparent
+      color: rgba(255,255,255,0.8)
   details
     & > summary
       filter brightness(1)
