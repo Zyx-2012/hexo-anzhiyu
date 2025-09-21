@@ -1249,7 +1249,13 @@ linkPageTop:
   enable: true
   title: 与数百名博主无限进步
   # 添加博主友链的评论自定义格式
-  addFriendPlaceholder: "昵称（请勿包含博客等字样）：\n网站地址（要求博客地址，请勿提交个人主页）：\n头像图片url（请提供尽可能清晰的图片，我会上传到cdn）：\n描述：\n站点截图（可选）：\n"
+  addFriendPlaceholder: "- name: 网站名称\nlink: 网站网址\navatar: 网站图标\ndescr: 网站描述\nsiteshot: 网站首页图片"
+
+
+作者: Zyx_2012
+链接: https://blog.zyx-2012.cn/link/
+来源: 折腾日记
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"
 
 # 缩略图后缀 archive/tag/category 页面单独开启后缀
 pageThumbnailSuffix: ""

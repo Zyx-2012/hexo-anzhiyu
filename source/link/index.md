@@ -63,10 +63,10 @@ top_img: false
 
 ```yml
 - {
-    title: "尘の个人博客",
-    intro: "05后，高中生，喜欢什么就做什么，内容偏技术向和保姆级，希望能对你有用QwQ",
-    link: "https://blog.mcxiaochen.top/",
-    image: "https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/anheyu.com/https://blog.mcxiaochen.top/",
+    title: "折腾日记",
+    intro: "专注于笔记、分享的博客",
+    link: "https://blog.zyx-2012.cn/",
+    image: "https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/anheyu.com/https://blog.zyx-2012.cn/",
   }
 ```
 
@@ -75,7 +75,7 @@ top_img: false
 <!-- tab html -->
 
 ```HTML
-<a href="https://blog.mcxiaochen.top/" rel="external nofollow">尘の个人博客</a>
+<a href="https://blog.zyx-2012.cn/" rel="external nofollow">折腾日记</a>
 ```
 
 <!-- endtab -->
@@ -85,7 +85,7 @@ top_img: false
 
 ## 友链添加条件
 
-- 已添加[本博客](https://blog.mcxiaochen.top)的友情链接
+- 已添加[本博客](https://blog.zyx-2012.cn)的友情链接
 - 网站服务器在地球上
 - 网站可以大陆直连
 - 网站内容积极向上正能量并符合中华人民共和国法律
@@ -93,7 +93,7 @@ top_img: false
 
 自行确认以上条件都符合就可以申请友链了
 
-我在看到后会马上加上de，如果没及时添加请见谅，可能在忙没看到，可以发邮件给我催催 QaQ
+我在看到后会马上加，如果没及时添加请见谅，可能在忙没看到，可以发邮件给我催催 QaQ {% del 当然就算发邮箱了我也可能看不到 %}
 
 > 注：
 > 未提供站点预览图的，本站会根据贵站链接调用以下 API 自动获取贵站的站点截图。
