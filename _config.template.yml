@@ -284,18 +284,15 @@ search:
   # content: true
 
 # RSS 插件配置
+
+rss: /atom.xml
+
 feed:
-  type:
-    - atom
-    - rss2
-  path:
-    - atom.xml
-    - rss2.xml
-  limit: 20 # 最大文章数量（可选）
-  hub: # PubSubHubbub hub 地址（可选）
+  type: atom
+  path: atom.xml
   content: true # 是否包含文章全文（可选）
   content_limit: 140 # 包含摘要时的字数限制（可选）
   content_limit_delim: ' ' # 分隔符（可选）
   order_by: -date # 按发布时间排序（可选）
-  pretty_atom_file: /feed/atom.xsl
+  pretty_atom_file: /feed/atom.xml
   icon: /img/favicon.ico # RSS 图标路径（可选）

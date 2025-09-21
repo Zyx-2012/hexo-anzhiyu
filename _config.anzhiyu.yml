@@ -19,7 +19,7 @@ menu:
      # 相册集: /album/ || anzhiyu-icon-images
      # 小空调: /air-conditioner/ || anzhiyu-icon-fan
      我的装备: /equipment/ || anzhiyu-icon-dice-d20
-    #  更新日志: /log/ || anzhiyu-icon-list-ul
+     更新日志: /log/ || anzhiyu-icon-list-ul
      待办清单: /todolist/ || anzhiyu-icon-stream
 
      

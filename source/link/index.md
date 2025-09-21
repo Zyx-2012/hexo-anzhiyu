@@ -50,11 +50,11 @@ top_img: false
 <!-- tab Butterfly -->
 
 ```yml
-- name: 尘の个人博客
-  link: https://blog.mcxiaochen.top/
-  avatar: https://blog.mcxiaochen.top/favicon.ico
-  descr: 05后，高中生，喜欢什么就做什么，内容偏技术向和保姆级，希望能对你有用QwQ
-  siteshot: https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/anheyu.com/https://blog.mcxiaochen.top/
+- name: 折腾日记
+  link: https://blog.zyx-2012.cn/
+  avatar: https://blog.zyx-2012.cn/favicon.ico
+  descr: 专注于笔记、分享的博客
+  siteshot: https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/anheyu.com/https://blog.zyx-2012.cn/
 ```
 
 <!-- endtab -->
