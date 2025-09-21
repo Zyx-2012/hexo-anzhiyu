@@ -610,7 +610,7 @@ hexo.extend.filter.register(
         enable: false,
         title: "与数百名博主无限进步",
         addFriendPlaceholder:
-        "- name: 网站名称\nlink: 网站网址\navatar: 网站图标\ndescr: 网站描述\nsiteshot: 网站首页图片",
+        "- name: 网站名称\n  link: 网站网址\n  avatar: 网站图标\n  descr: 网站描述\n  siteshot: 网站首页图片",
       },
       pageThumbnailSuffix: null,
       agreementPopup: {
