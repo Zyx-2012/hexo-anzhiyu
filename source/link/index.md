@@ -98,7 +98,7 @@ top_img: false
 > 注：
 > 未提供站点预览图的，本站会根据贵站链接调用以下 API 自动获取贵站的站点截图。
 > 
-> ```web
+> ```url
 > https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/anheyu.com/https://<你的域名>/
 > ```
 
