@@ -4,7 +4,7 @@
   todo_list:
     - content: 建站
       completed: true
-    - content: 加入十年之约
+    - content: 有自己的服务器（白嫖的不算）
       completed: false
     - content: 网站获得ICP备案
       completed: false
@@ -13,39 +13,29 @@
 - class_name: 想要的东西
   seat: right
   todo_list:
-    - content: 哔哩哔哩花嫁卡
+    - content: 自己配的台式
+      completed: false
+    - content: GTS4
       completed: true
-    - content: 一加13（被没收了）
-      completed: true
-    - content: 1t的NVME硬盘
+    - content: 联想显示屏
       completed: true
     - content: 游戏本
       completed: false
-    - content: 一加Ace 5 Pro 或 一加15
-      completed: false
-    - content: 春风450sr
-      completed: false
-    - content: 全碳公路车
-      completed: false
+    - content: 喜德盛hacker500
+      completed: true
 
 - class_name: 想学的技术
   seat: left
   todo_list:
-    - content: 吉他
+    - content: python
       completed: false
-    - content: 修自行车
-      completed: true
-    - content: 安卓开发
+    - content: cpp(GESP达到7级以上)
+      completed: false
+    - content: 前端（包括纯前端、vue、node等）
       completed: false
 
 - class_name: 想去的地方
   seat: right
   todo_list:
-    - content: 318国道
-      completed: false
-    - content: 日本
-      completed: false
-    - content: 上海
-      completed: true
-    - content: 杭州
+    - content: 只想宅家
       completed: true
