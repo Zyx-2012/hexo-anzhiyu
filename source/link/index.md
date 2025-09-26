@@ -83,6 +83,9 @@ top_img: false
 <!-- endtab -->
 
 {% endtabs %}
+
+我的rss: ``https://blog.zyx-2012.cn/atom.xml``
+
 {% endfolding %}
 
 ## 友链添加条件
