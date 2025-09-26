@@ -464,14 +464,14 @@ footer:
     centerImg:
     left:
       - title: Github
-        link: https://github.com/mcxiaochenn
+        link: https://github.com/Zyx-2012
         icon: anzhiyu-icon-github
       - title: Bilibili
-        link: https://space.bilibili.com/123757127
+        link: https://space.bilibili.com/3546582964243214
         icon: anzhiyu-icon-bilibili
     right:
       - title: email
-        link: mailto:mcxiaochenn.yyds@gmail.com
+        link: mailto:1051270035@qq.com
         icon: anzhiyu-icon-envelope
       - title: RSS
         link: atom.xml
