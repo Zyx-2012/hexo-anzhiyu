@@ -4,6 +4,11 @@ cover: '/img/blog/[比赛]CSP-J&S解析/cover.webp'
 abbrlink: 353f837d
 date: 2025-09-24 21:42:31
 updated: 2025-09-24 21:42:31
+tags: 
+  - "比赛"
+  - "CSP"
+categories:
+  - "教程"
 ---
 
 {% p center logo large, 2025 年 CSP-J / CSP-S 全题解析 %}
