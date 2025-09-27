@@ -41,8 +41,8 @@
   map:
     title: 我现在住在
     StrengthenTitle: 中国，北京市
-    background: /img/map.png
-    backgroundDark: /img/map.png
+    background: /img/about/light.png
+    backgroundDark: /img/about/dark.png
   selfInfo:
     selfInfoTips1: 生于
     selfInfoContentYear: 2012
