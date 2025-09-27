@@ -484,22 +484,10 @@ footer:
         links:
           - title: 阿里云
             link: https://aliyun.com/
-          - title: 雨云
-            link: https://www.rainyun.com/blxc123_
-          - title: Cloudflare
-            link: https://pages.cloudflare.com/
           - title: Netlify
             link: https://www.netlify.com/
-          - title: Vercel
-            link: https://vercel.com/
-      - title: 服务
-        links:
-          - title: 中文网字计划
-            link: https://chinese-font.netlify.app/
-          - title: 去不图床
-            link: https://7bu.top/
-          - title: Vercount
-            link: https://cn.vercount.one/
+          - title: Zeabur
+            link: https://Zeabur.com/
       - title: 架构
         links:
           - title: Hexo
@@ -512,10 +500,6 @@ footer:
         links:
           - title: 关于
             link: /about/
-          - title: 追番页
-            link: /bangumis/
-          - title: 音乐馆
-            link: /music/?id=14288163236&server=netease
           - title: 最新评论
             link: /messages/
       - title: 导航

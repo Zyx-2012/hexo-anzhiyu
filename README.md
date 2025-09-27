@@ -17,5 +17,5 @@
 - **如果你想直接复制我的文章或整站镜像 → 🚫 禁止（CC-BY-NC-ND）**  
 
 📌 引用或转载时，请注明出处：  
-[小尘 Xiao Chen - https://blog.mcxiaochenn.top](https://blog.mcxiaochenn.top)  
+[Zyx-2012](https://blog.zyx-2012.cn)  
 

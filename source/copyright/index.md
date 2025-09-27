@@ -17,7 +17,7 @@ comments: false
 
 ### 协议的作用与限制
 
-- **署名（BY）**：必须标注内容来源，建议在文章开头或明显位置注明：[小尘 Xiao Chen - https://blog.mcxiaochenn.top](https://blog.mcxiaochenn.top)
+- **署名（BY）**：必须标注内容来源，建议在文章开头或明显位置注明：[Zyx_2012 - https://blog.zyx-2012.cn](https://blog.zyx-2012.cn)
 - **非商业性（NC）**：禁止商业性使用，例如插广告、付费墙、下载后商业利用等。  
 - **禁止演绎（ND）**：禁止修改内容、衍生创作或整站镜像；可以作为参考资料摘录部分内容，但需注明出处。
 
