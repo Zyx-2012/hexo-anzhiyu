@@ -90,9 +90,9 @@
     start: 2025/07/17
     end: 2035/07/17
   reward_list:
-   - name: 小尘
-     amount: 0.0
-     datatime: 2025-07-17
-   - name: 雨云
-     amount: 180.0
-     datatime: 2025-07-17
+   - name: longxia-steven
+     amount: 2.0
+     datatime: 2025-09-06
+   - name: zeabur
+     amount: 35.65/月
+     datatime: 2025-09-01
