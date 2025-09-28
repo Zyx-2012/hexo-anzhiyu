@@ -484,6 +484,8 @@ footer:
         links:
           - title: 阿里云
             link: https://aliyun.com/
+          - title: 腾讯云
+            link: https://cloud.tencent.com/
           - title: Netlify
             link: https://www.netlify.com/
           - title: Zeabur
@@ -527,10 +529,10 @@ footer:
       enable: true
       link: /copyright/
     linkList:
-      # - link: https://aliyun.com
-      #   text: 本站由阿里云提供网页服务
+      - link: https://cloud.tencent.com/
+        text: 本站由腾讯云提供评论服务
       - link: https://zeabur.com
-        text: 本站由Zeabur提供计算服务
+        text: 本站由Zeabur提供监测服务
       # - link: https://www.yuzu-soft.com/products.html
       #   text: 柚ICP备-0d000721号
     subTitle:
