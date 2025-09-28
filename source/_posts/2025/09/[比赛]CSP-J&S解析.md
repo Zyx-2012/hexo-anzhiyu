@@ -13,7 +13,6 @@ categories:
 
 {% p center logo large, 2025 年 CSP-J / CSP-S 全题解析 %}
 
-{% p center small, 作者：由 AI 整理（来源见文末） %}
 
 > 注：本文为赛后解析汇总，题目与答案主要参考公开的赛题/解析。
 
