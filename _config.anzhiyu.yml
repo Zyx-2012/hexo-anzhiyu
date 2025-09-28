@@ -1319,7 +1319,7 @@ CDN:
     # pjax:
     # blueimp_md5:
     # valine:
-    twikoo: https://cdnjs.cloudflare.com/ajax/libs/twikoo/1.6.9/twikoo.min.js
+    twikoo: https://cdnjs.cloudflare.com/ajax/libs/twikoo/1.6.44/twikoo.min.js
     # waline_js:
     # waline_css:
     # sharejs:
