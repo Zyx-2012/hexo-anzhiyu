@@ -8,8 +8,8 @@ menu:
 
    朋友们:
      友链: /link/ || anzhiyu-icon-link
-     朋友圈: /fcircle/ || anzhiyu-icon-artstation
-     留言板: /comments/ || anzhiyu-icon-envelope
+    #  朋友圈: /fcircle/ || anzhiyu-icon-artstation
+    #  留言板: /comments/ || anzhiyu-icon-envelope
 
    我的:
      关于我: /about/ || anzhiyu-icon-paper-plane
@@ -510,8 +510,8 @@ footer:
             link: /link/
           - title: 朋友圈
             link: /fcircle/
-          - title: 留言板
-            link: /comments/
+          # - title: 留言板
+            # link: /comments/
       - title: 协议
         links:
           - title: 隐私协议
@@ -529,8 +529,8 @@ footer:
     linkList:
       # - link: https://aliyun.com
       #   text: 本站由阿里云提供网页服务
-      - link: https://www.rainyun.com/blxc123_
-        text: 本站由雨云提供计算服务
+      - link: https://zeabur.com
+        text: 本站由Zeabur提供计算服务
       # - link: https://www.yuzu-soft.com/products.html
       #   text: 柚ICP备-0d000721号
     subTitle:
@@ -1093,7 +1093,7 @@ friends_vue:
 
 # 轻量朋友圈配置
 friends_lite:
-  enable: true
+  enable: false
   fclite_css_url: https://friend.mcxiaochen.top/main/fclite.css  # 轻量朋友圈的CSS
   fclite_js_url: https://friend.mcxiaochen.top/main/fclite.js    # 轻量朋友圈的js
   private_api_url: https://friend.mcxiaochen.top/                # 获取json的API URL
