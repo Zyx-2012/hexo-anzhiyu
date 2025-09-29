@@ -449,6 +449,7 @@ footer:
       - link: https://hopedomain.com/zh/age/zyx-2012.cn
         shields: https://hopedomain.com/api/badge/domain-age/zyx-2012.cn?theme=purple&lang=zh
         message: 域名年龄
+
       - link: https://icp.gov.moe/?keyword=20254037
         shields: /img/萌ICP备：20254037号.svg
         message: 萌ICP备20254037号
@@ -456,6 +457,11 @@ footer:
       - link: https://ipw.cn/ssl/?site=blog.zyx-2012.cn
         shields: https://static.ipw.cn/icon/ssl-s1.svg
         message: 本站支持SSL安全访问
+
+      - link: https://health.zyx-2012.cn/status/blog
+        shields: https://health.zyx-2012.cn/icon.svg
+        message: Uptine-Kuma健康监测
+        
       # - link: http://creativecommons.org/licenses/by-nc-sa/4.0/
       #   shields: https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/Copyright-BY-NC-SA.svg
       #   message: 本站采用知识共享署名-非商业性使用-相同方式共享4.0国际许可协议进行许可
@@ -496,6 +502,8 @@ footer:
             link: https://hexo.io/
           - title: AnZhiYu
             link: https://blog.anheyu.com/
+          - title: Uptime-Kuma
+            link: https://github.com/louislam/uptime-kuma
           - title: GitHub
             link: https://github.com/
       - title: 我的
