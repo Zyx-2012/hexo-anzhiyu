@@ -1,6 +1,6 @@
 ---
 title: 版权协议
-date: 2025-07-18 23:10:05
+date: 2025-09-30 23:10:05
 aside: false
 top_img: false
 comments: false
@@ -66,12 +66,12 @@ comments: false
 
 ### 2. 博客原创内容 CC-BY-NC-ND 4.0 文件
 - 文件名：`LICENSE-CONTENT`  
-- 链接：[点击查看 CC-BY-NC-ND 4.0 License](https://github.com/mcxiaochenn/Blog-hexo/blob/main/LICENSE-CONTENT)  
+- 链接：[点击查看 CC-BY-NC-ND 4.0 License](https://github.com/Zyx-2012/hexo-anzhiyu/blob/main/LICENSE-CONTENT)  
 - 官方法律文本请参考：[CC BY-NC-ND 4.0 官方文本](https://creativecommons.org/licenses/by-nc-nd/4.0/legalcode.txt)
 
 ### 3. 网站源代码 GPL License 文件
 - 文件名：`LICENSE-GPL`  
-- 链接：[点击查看 GPL License](https://github.com/mcxiaochenn/Blog-hexo/blob/main/LICENSE-GPL)  
+- 链接：[点击查看 GPL License](https://github.com/Zyx-2012/hexo-anzhiyu/blob/main/LICENSE-GPL)  
 
 ---
 

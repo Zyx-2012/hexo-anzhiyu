@@ -8,6 +8,11 @@ layout: sitetime
 
 {% timeline 2025 %}
 
+<!-- timeline 09-30 -->
+更新版权协议及隐私协议
+增加健康监测
+<!-- endtimeline -->
+
 <!-- timeline 09-26 -->
 更新友链相关页
 不知道哪个神秘人给我把经纬度改了
