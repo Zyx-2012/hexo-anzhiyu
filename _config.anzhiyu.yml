@@ -31,6 +31,16 @@ nav:
   travelling: true
   clock: false
   menu:
+    - title:
+      item:
+        - name: 我的主页
+          link: https://www.zyx-2012.cn
+          icon: https://blog.zyx-2012.cn/favicon.ico
+        
+        - name: 我的导航站
+          link: https://nav.zyx-2012.cn
+          icon: https://blog.zyx-2012.cn/favicon.ico
+          
     - title: 常用网站
       item:
         - name: ChatGPT
