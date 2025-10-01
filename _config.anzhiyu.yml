@@ -8,6 +8,7 @@ menu:
 
    朋友们:
      友链: /link/ || anzhiyu-icon-link
+     宝藏博主: javascript:friendChainRandomTransmission() || anzhiyu-icon-paper-plane1
     #  朋友圈: /fcircle/ || anzhiyu-icon-artstation
     #  留言板: /comments/ || anzhiyu-icon-envelope
 
@@ -623,19 +624,19 @@ site_verification:
 
 theme_color:
   enable: true
-  main: "#a8e6cf"   # #425AEF
-  dark_main: "#ffd3b6"
-  paginator: "#a8e6cf"
+  main: "#ffd3b6"   # #425AEF
+  dark_main: "#b69142"
+  paginator: "#ffd3b6"
   button_hover: "#FF7242"
-  text_selection: "#ffaaa5"
+  text_selection: "#b69142"
   link_color: "var(--anzhiyu-fontcolor)"
   meta_color: "var(--anzhiyu-fontcolor)"
   hr_color: "#4259ef23"
   code_foreground: "#fff"
-  code_background: "#ffaaa5"  # var(--anzhiyu-code-stress)
-  toc_color: "#a8e6cf"
-  blockquote_padding_color: "#a8e6cf"
-  blockquote_background_color: "#a8e6cf"
+  code_background: "#b69142"  # var(--anzhiyu-code-stress)
+  toc_color: "#ffd3b6"
+  blockquote_padding_color: "#ffd3b6"
+  blockquote_background_color: "#ffd3b6"
   scrollbar_color: "var(--anzhiyu-scrollbar)"
   meta_theme_color_light: "#f7f9fe"
   meta_theme_color_dark: "#18171d"
@@ -1016,7 +1017,7 @@ aplayerInject:
 snackbar:
   enable: true
   position: top-center
-  bg_light: "#a8e6cf" # 浅色模式下 Toast 通知的背景颜色
+  bg_light: "#ffd3b6" # 浅色模式下 Toast 通知的背景颜色
   bg_dark: "#1f1f1f" # 深色模式下 Toast 通知的背景颜色
 
 # https://instant.page/
