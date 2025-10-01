@@ -40,7 +40,11 @@ nav:
         - name: 我的导航站
           link: https://nav.zyx-2012.cn
           icon: https://blog.zyx-2012.cn/favicon.ico
-          
+
+        - name: 我的cover
+          link: https://cover.zyx-2012.cn
+          icon: https://cover.zyx-2012.cn/favicon.svg
+
     - title: 常用网站
       item:
         - name: ChatGPT
@@ -902,7 +906,7 @@ busuanzi:
 # 格式: 月/日/年 时间 或 年/月/日 时间
 runtimeshow:
   enable: true
-  publish_date: 7/17/2025 14:59:55
+  publish_date: 9/1/2025 14:59:55
 
 # 控制台 - 最新评论
 newest_comments:
