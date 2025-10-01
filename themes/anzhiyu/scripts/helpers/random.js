@@ -1,3 +1,4 @@
+
 hexo.extend.generator.register("random", function (locals) {
   const config = hexo.config.random || {};
   const themeConfig = hexo.theme.config;
