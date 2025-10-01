@@ -32,7 +32,7 @@
     - title: 代步工具
       description: 出门交通工具
       equipment_list:
-        - name: XDS 黑客500
+        - name: XDS hacker 500
           specification: 磨砂黑
           description: 上学、出勤、速降、硬尾干坠，超越自我 （ “我知道一条近路”，超越公路佬 ）
           image: /img/equipment/hacker500.webp

@@ -27,15 +27,33 @@ menu:
 
 # 导航相关配置
 nav:
-  enable: false
-  travelling: false
+  enable: true
+  travelling: true
   clock: false
   menu:
-    - title: xxx
+    - title: 常用网站
       item:
-        - name: xxx
-          link: https://xxx.com
-          icon: https://xxx.com
+        - name: ChatGPT
+          link: https://chatgpt.com
+          icon: https://cdn.oaistatic.com/assets/favicon-180x180-od45eci6.webp
+        
+        - name: cover
+          link: https://cover.mcxiaochen.top
+          icon: https://cover.mcxiaochen.top/favicon.svg
+
+        - name: Github
+          link: https://github.com
+          icon: https://github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg
+
+    - title: 好友网站
+      item:
+        - name: 星辰客栈
+          link: https://www.ruibin-ningh.top
+          icon: https://www.ruibin-ningh.top/upload/%E5%8E%BB%E8%83%8C%E6%99%AFicon%E8%AE%BE%E8%AE%A1%E5%9B%BE%E6%A0%87.png
+
+        - name: 辰渊尘の博客
+          link: https://blog.mcxiaochen.top
+          icon: https://blog.mcxiaochen.top/favicon.ico
 
 
 # 哀悼模式（哀悼日，指定日期网站简单变灰，不包括滚动条）
@@ -63,7 +81,7 @@ code_word_wrap: false
 # copyright: 在复制内容后添加版权信息
 # copy: enable 复制后弹窗提示版权信息
 copy:
-  enable: true
+  enable: false
   copyright:
     enable: true
     limit_count: 128
