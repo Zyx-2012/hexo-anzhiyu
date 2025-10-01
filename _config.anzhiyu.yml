@@ -1072,8 +1072,8 @@ home_top:
       shadow: var(--anzhiyu-shadow-green)
       class: blue
       icon: anzhiyu-icon-dove
-    - name: 记录
-      path: /categories/记录/
+    - name: 算法
+      path: /categories/算法/
       shadow: var(--anzhiyu-shadow-blue)
       class: green
       icon: anzhiyu-icon-book

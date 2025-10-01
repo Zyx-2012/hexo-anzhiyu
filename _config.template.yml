@@ -79,7 +79,7 @@ index_generator:
 
 # 分类和标签
 default_category: uncategorized
-category_map: 题解,记录,心情随笔,教程
+category_map: 题解,算法,心情随笔,教程
 tag_map: 工具,mc,数学,折腾,实用,water,c++,python
 
 # 元数据元素
