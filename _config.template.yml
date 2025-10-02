@@ -26,7 +26,7 @@ timezone: ''  # 时区，默认使用电脑的时区
 
 # URL
 ## 在此设置您的站点URL。例如，如果使用GitHub Page，将url设置为'https://username.github.io/project'
-url: https:blog.zyx-2012.cn
+url: https://blog.zyx-2012.cn
 
 permalink_defaults:
 pretty_urls:
