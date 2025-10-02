@@ -95,9 +95,9 @@ code_word_wrap: false
 # copyright: 在复制内容后添加版权信息
 # copy: enable 复制后弹窗提示版权信息
 copy:
-  enable: false
+  enable: true
   copyright:
-    enable: true
+    enable: false
     limit_count: 128
 
 # 社交设置 (社交图标设置)
@@ -324,9 +324,9 @@ post_pagination: 2
 
 # 显示文章过期提醒
 noticeOutdate:
-  enable: false
+  enable: true
   style: flat # style: simple/flat
-  limit_day: 365 # 何时显示
+  limit_day: 732 # 何时显示
   position: top # position: top/bottom
   message_prev: 距离上次更新已过去
   message_next: 天，文章内容可能已过时。
@@ -1131,7 +1131,7 @@ home_top:
   banner:
     tips: Hexo
     title: Anzhiyu
-    image: /img/congyu/congyu1.png
+    image: /img/else/背景1.webp
     link: https://blog.zyx-2012.cn
 
 # 朋友圈配置
