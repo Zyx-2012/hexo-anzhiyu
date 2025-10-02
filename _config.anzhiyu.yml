@@ -52,8 +52,8 @@ nav:
           icon: https://cdn.oaistatic.com/assets/favicon-180x180-od45eci6.webp
         
         - name: cover
-          link: https://cover.mcxiaochen.top
-          icon: https://cover.mcxiaochen.top/favicon.svg
+          link: https://cover.zyx-2012.cn
+          icon: https://cover.zyx-2012.cn/favicon.svg
 
         - name: Github
           link: https://github.com
@@ -468,12 +468,12 @@ footer:
     since: 2025
   custom_text:
   runtime:
-    enable: false
-    launch_time: 7/17/2025 14:59:55 # 网站上线时间
+    enable: true
+    launch_time: 9/1/2025 15:35:42 # 网站上线时间
     work_img: /img/xiaocheng-all/xiaocheng-class.svg
     work_description: "我不想上课啊 :("
     offduty_img: /img/xiaocheng-all/xiaocheng-afterclass.svg
-    offduty_description: "下课了就该开开心心的玩耍，Ciallo～(∠・ω< )⌒☆"
+    offduty_description: "下课了就该开开心心的玩耍，(∠・ω< )⌒☆"
   # 徽标部分配置项 https://shields.io/
   # https://img.shields.io/badge/CDN-jsDelivr-orange?style=flat&logo=jsDelivr
   bdageitem:
@@ -574,8 +574,8 @@ footer:
         text: 本站由腾讯云提供评论服务
       - link: https://zeabur.com
         text: 本站由Zeabur提供监测服务
-      # - link: https://www.yuzu-soft.com/products.html
-      #   text: 柚ICP备-0d000721号
+      - link: https://netlify.com
+        text: 本站由netlify提供静态部署服务
     subTitle:
       enable: true
       # 打字效果
@@ -592,7 +592,7 @@ footer:
       # source: 2  调用一句网（简体） http://yijuzhan.com/
       # source: 3  调用今日诗词（简体） https://www.jinrishici.com/
       # subtitle 会先显示 source , 再显示 sub 的内容
-      source: 1
+      source: 3
       # 如果关闭打字效果，subtitle 只会显示 sub 的第一行文字
       sub:
         # - 生活明朗&#44; 万物可爱&#44; 人间值得&#44; 未来可期.
@@ -761,11 +761,19 @@ click_heart:
 
 # 鼠标点击效果: 文字
 ClickShowText:
-  enable: false
+  enable: true
   text:
-    # - I
-    # - LOVE
-    # - YOU
+    - Hi
+    - coding
+    - Welcome
+    - 🚀
+    - Enjoy
+    - ✨
+    - Hello
+    - Blog
+    - 👍
+    - OIer
+    - coder
   fontSize: 15px
   random: false
   mobile: false
