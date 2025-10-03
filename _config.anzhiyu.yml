@@ -88,7 +88,7 @@ highlight_theme: pale night #  darker / pale night / light / ocean / mac / mac l
 highlight_copy: true # 复制按钮
 highlight_lang: true # 显示代码语言
 highlight_shrink: false # true: 收缩代码块 / false: 展开代码块 | none: 展开代码块并隐藏按钮
-highlight_height_limit: 330 # 单位: px
+highlight_height_limit: 500 # 单位: px
 code_word_wrap: false
 
 # 复制设置
