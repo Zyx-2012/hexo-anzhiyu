@@ -31,7 +31,7 @@ nav:
   travelling: true
   clock: false
   menu:
-    - title:
+    - title: 我的站点
       item:
         - name: 我的主页
           link: https://www.zyx-2012.cn
@@ -44,6 +44,16 @@ nav:
         - name: 我的cover
           link: https://cover.zyx-2012.cn
           icon: https://cover.zyx-2012.cn/favicon.svg
+
+    - title: 我的
+      item:
+        - name: 爱发电
+          link: https://afdian.com/a/zyx_2012
+          icon: https://static.afdiancdn.com/static/img/icons/apple-touch-icon-120x120.png
+        
+        - name: github/Zyx-2012
+          link: https://github.com/Zyx-2012
+          icon: https://github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg
 
     - title: 常用网站
       item:
