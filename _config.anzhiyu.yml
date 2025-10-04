@@ -52,6 +52,10 @@ nav:
           link: https://health.zyx-2012.cn/status/blog
           icon: https://health.zyx-2012.cn/icon.svg
 
+        - name: 我的openlist
+          link: https://openlist.zyx-2012.cn
+          icon: https://res.oplist.org/logo/logo.svg
+
     - title: 我的
       item:
         - name: 爱发电
