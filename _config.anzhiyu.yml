@@ -14,16 +14,19 @@ menu:
 
    我的:
      关于我: /about/ || anzhiyu-icon-paper-plane
-     音乐馆: /music/?id=14288163236&server=netease || anzhiyu-icon-music
     #  追番页: /bangumis/ || anzhiyu-icon-bilibili
      闲言碎语: /essay/ || anzhiyu-icon-lightbulb
      # 相册集: /album/ || anzhiyu-icon-images
      # 小空调: /air-conditioner/ || anzhiyu-icon-fan
      我的装备: /equipment/ || anzhiyu-icon-dice-d20
-     更新日志: /log/ || anzhiyu-icon-list-ul
      待办清单: /todolist/ || anzhiyu-icon-stream
-
      
+   页面:
+     音乐馆: /music/?id=14288163236&server=netease || anzhiyu-icon-music
+     更新日志: /log/ || anzhiyu-icon-list-ul
+     赞助: https://ifdian.net/a/zyx_2012 || anzhiyu-icon-hand-heart-fill
+
+
 
 # 导航相关配置
 nav:
