@@ -55,6 +55,10 @@ nav:
           link: https://github.com/Zyx-2012
           icon: https://github.githubassets.com/assets/pinned-octocat-093da3e6fa40.svg
 
+        - name: 我的社交主页
+          link: https://biofy.cn/Zyx_2012
+          icon: https://blog.zyx-2012.cn/favicon.ico
+
     - title: 常用网站
       item:
         - name: ChatGPT
