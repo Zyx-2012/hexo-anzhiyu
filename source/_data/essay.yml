@@ -24,8 +24,9 @@
     #   date: 202x/xx/xx xx:xx
     # - content: xxx
     #   date: 202x/xx/xx xx:xx
-    - content: 入驻爱发电 https://afdian.com/a/zyx_2012
+    - content: 入驻爱发电
       date: 2025/10/04 14:12
+      link: https://afdian.com/a/zyx_2012
     - content: 图床配置好了，可以在评论里直接粘贴图片了
       date: 2025/10/02 19:44
     - content: 微软不知名bug
