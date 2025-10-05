@@ -294,6 +294,6 @@ feed:
   content_limit: 140 # 包含摘要时的字数限制（可选）
   content_limit_delim: ' ' # 分隔符（可选）
   order_by: -date # 按发布时间排序（可选）
-  pretty_atom_file: /feed/atom.xml
+  pretty_atom_file: /feed/atom.xsl
   icon: /img/favicon.ico # RSS 图标路径（可选）
   limit: 25
