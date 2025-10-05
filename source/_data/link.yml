@@ -3,6 +3,15 @@
   hundredSuffix: ""
   class_desc: 排序不分先后，大家都很优秀
   link_list:
+  
+  - name: 星尘客栈 - 宇宙尺度的知识驿站
+    link: https://www.ruibin-ningh.top/
+    avatar: https://www.ruibin-ningh.top/upload/%E5%8E%BB%E8%83%8C%E6%99%AFicon%E8%AE%BE%E8%AE%A1%E5%9B%BE%E6%A0%87.png
+    descr: 宇宙尺度的知识驿站
+    siteshot: https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/www.ruibin-ningh.top/https://www.ruibin-ningh.top/
+    color: vip
+    tag: 初识
+
   - name: 辰渊尘の个人博客 - 「小尘」の个人博客
     link: https://blog.mcxiaochen.top/
     avatar: https://blog.mcxiaochen.top/favicon.ico
@@ -60,14 +69,6 @@
     tag: 
 
 
-
-  - name: 星尘客栈 - 宇宙尺度的知识驿站
-    link: https://www.ruibin-ningh.top/
-    avatar: https://www.ruibin-ningh.top/upload/%E5%8E%BB%E8%83%8C%E6%99%AFicon%E8%AE%BE%E8%AE%A1%E5%9B%BE%E6%A0%87.png
-    descr: 宇宙尺度的知识驿站
-    siteshot: https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/www.ruibin-ningh.top/https://www.ruibin-ningh.top/
-    color: vip
-    tag: 
 
 
 - class_name: 常规
