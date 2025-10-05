@@ -516,9 +516,13 @@ footer:
         shields: https://static.ipw.cn/icon/ssl-s1.svg
         message: 本站支持SSL安全访问
 
+      - link: https://umami.zyx-2012.cn/websites/638e52c9-c403-4598-b8a2-918d74ac6c19
+        shields: https://umami.zyx-2012.cn/favicon.ico
+        message: Umami统计
+
       - link: https://health.zyx-2012.cn/status/blog
         shields: https://health.zyx-2012.cn/icon.svg
-        message: Uptine-Kuma健康监测
+        message: Uptime-Kuma健康监测
         
       # - link: http://creativecommons.org/licenses/by-nc-sa/4.0/
       #   shields: https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/Copyright-BY-NC-SA.svg
