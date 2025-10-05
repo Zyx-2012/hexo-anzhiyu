@@ -1,0 +1,40 @@
+/* 白天网站背景/颜色 
+#web_bg {
+ background: linear-gradient(90deg, rgba(247, 149, 51, .1), rgba(243, 112, 85, .1) 15%, rgba(239, 78, 123, .1) 30%, rgba(161, 102, 171, .1) 44%, rgba(80, 115, 184, .1) 58%, rgba(16, 152, 173, .1) 72%, rgba(7, 179, 155, .1) 86%, rgba(109, 186, 130, .1))
+}
+*/
+
+/* 夜间网站背景/颜色 */
+[data-theme=dark] #web_bg {
+    position: fixed;       /* 固定在页面上 */
+    top: 0;
+    left: 0;
+    width: 100vw;          /* 占满整个宽度 */
+    height: 100vh;         /* 占满整个高度 */
+    background: url('/img/xiowo-bg-dark.jpg') no-repeat center center;
+    background-size: cover; /* 背景按比例覆盖整个容器 */
+    z-index: -1;           /* 放到最底层，保证内容在上面 */
+}
+
+
+.status-tag {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 0 3px;
+    border-radius: 6px 0 12px 0;
+    font-size: 10px;
+    color: #fff;
+    font-weight: 700;
+    transition: font-size .3s ease-out, opacity .3s ease-out;
+}
+
+.flink-list-item:hover .status-tag {
+    font-size: 0;
+    opacity: 0;
+}
+
+.status-tag-green { background-color: #599e0b; }
+.status-tag-light-yellow { background-color: #fed101; }
+.status-tag-dark-yellow { background-color: #f0b606; }
+.status-tag-red { background-color: #b90000; }
