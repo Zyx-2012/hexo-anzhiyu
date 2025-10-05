@@ -347,7 +347,16 @@ if site.data.about
     if theme.Umami && theme.Umami.enable
       script(defer).
         (function() {
-          const umamiApiUrl = "#{url_for(theme.Umami.umami_api)}";
+          const websiteId = "#{theme.Umami.umami_id}";
+          const today = new Date();
+          const yyyy = today.getFullYear();
+          const mm = String(today.getMonth() + 1).padStart(2, '0');
+          const dd = String(today.getDate()).padStart(2, '0');
+          const startAt = `${yyyy}-${mm}-${dd}`;
+          const endAt = startAt;
+
+          const umamiApiUrl = `#{theme.Umami.umami_api}/websites/${websiteId}/stats?startAt=${startAt}&endAt=${endAt}`;
+
           fetch(umamiApiUrl)
             .then(res => res.json())
             .then(data => {
@@ -370,6 +379,7 @@ if site.data.about
             .catch(error => console.error('Error:', error));
         })();
     else
+      //- 保留原来的 51LA 逻辑
       script(defer).
         function initAboutPage() {
           fetch("https://v6-widget.51.la/v6/#{ck}/quote.js")
@@ -386,7 +396,6 @@ if site.data.about
 
               let statisticEl = document.getElementById("statistic");
 
-              // 自定义不显示哪个或者显示哪个，如下为不显示 最近活跃访客 和 总访问量
               let statistic = [];
               for (let i = 0; i < num.length; i++) {
                 if (!statisticEl) return;
@@ -407,7 +416,7 @@ if site.data.about
                 });
               }
 
-              let statisticElement = document.querySelector(".about-statistic.author-content-item");
+              const statisticElement = document.querySelector(".about-statistic.author-content-item");
               function statisticUP() {
                 if (!statisticElement) return;
 
@@ -420,16 +429,12 @@ if site.data.about
                           statistic[i - 1].start();
                         });
                       }
-                      observer.disconnect(); // 停止观察元素，因为不再需要触发此回调
+                      observer.disconnect();
                     }
                   });
                 };
 
-                const options = {
-                  root: null,
-                  rootMargin: "0px",
-                  threshold: 0
-                };
+                const options = { root: null, rootMargin: "0px", threshold: 0 };
                 const observer = new IntersectionObserver(callback, options);
                 observer.observe(statisticElement);
               }
@@ -441,7 +446,7 @@ if site.data.about
           initAnimation();
         }
         if (typeof gsap === "object") {
-          initAboutPage()
+          initAboutPage();
         } else {
           getScript("!{url_for(theme.asset.gsap_js)}").then(initAboutPage);
         }
@@ -528,7 +533,7 @@ if site.data.about
         });
       }
       if (typeof gsap === "object") {
-        initAnimation()
+        initAnimation();
       } else {
         getScript("!{url_for(theme.asset.gsap_js)}").then(initAnimation);
       }
