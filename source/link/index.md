@@ -84,7 +84,7 @@ top_img: false
 
 {% endtabs %}
 
-我的rss: ``https://blog.zyx-2012.cn/atom.xml``
+我的rss: [atom.xml](https://blog.zyx-2012.cn/atom.xml)
 
 {% endfolding %}
 
