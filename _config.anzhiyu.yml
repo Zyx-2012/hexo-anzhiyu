@@ -1451,5 +1451,5 @@ Umami:
   enable: true # 开关
   umami_url_js: https://umami.zyx-2012.cn/u.js # 填写 umami js地址 可以使用第三方CDN加速但需要配置下面的 umami_url
   umami_id: 638e52c9-c403-4598-b8a2-918d74ac6c19 # 填写 umami 统计 ID
-  umami_api: https://umami.zyx-2012.cn/api # 填写 umami API 地址
+  umami_api: https://umami.zyx-2012.cn/api/websites/UUID/stats # 填写 umami API 地址
   umami_url: # https://um.ruom.top 填写 umami 服务器地址 使用 CDN 加速 Umami 静态资源后需配置此项
