@@ -43,7 +43,7 @@ top_img: false
 也欢迎在评论区留言反馈，感谢您的理解与支持。
 {% endfolding %}
 
-{% folding 我的友链 %}
+{% folding open,我的友链 %}
 
 ### 我的友链
 
