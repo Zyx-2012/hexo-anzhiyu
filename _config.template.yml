@@ -296,3 +296,4 @@ feed:
   order_by: -date # 按发布时间排序（可选）
   pretty_atom_file: /feed/atom.xml
   icon: /img/favicon.ico # RSS 图标路径（可选）
+  limit: 25
