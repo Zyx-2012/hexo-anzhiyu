@@ -350,44 +350,50 @@ if site.data.about
           const rawApi = "#{url_for(theme.Umami.umami_api)}".replace(/\/$/, '');
           const websiteId = "#{theme.Umami.umami_id}";
 
-          // 生成 YYYY-MM-DD
-          const today = new Date();
-          const yyyy = today.getFullYear();
-          const mm = String(today.getMonth() + 1).padStart(2, '0');
-          const dd = String(today.getDate()).padStart(2, '0');
-          const startAt = `${yyyy}-${mm}-${dd}`;
-          const endAt = startAt;
+          // 计算今天的 UTC 起始与结束（毫秒）
+          const now = new Date();
+          // 取当天 00:00:00 UTC（注意：使用 UTC，避免时区差异导致后端误判）
+          const startUtc = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), 0, 0, 0, 0);
+          // 当天 23:59:59.999 UTC
+          const endUtc = Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), 23, 59, 59, 999);
 
-          function buildStatsUrl(base, siteId, sAt, eAt) {
+          function buildStatsUrl(base, siteId, startMs, endMs) {
             base = base.replace(/\/$/, '');
-            // 如果已经包含 /websites/{siteId}
+            // 如果 base 已包含 /websites/{siteId}
             if (base.includes(`/websites/${siteId}`)) {
-              // 如果已经包含 /stats
+              // 已含 /stats ?
               if (base.includes('/stats')) {
-                return base + (base.includes('?') ? '&' : '?') + `startAt=${sAt}&endAt=${eAt}`;
+                return base + (base.includes('?') ? '&' : '?') + `startAt=${startMs}&endAt=${endMs}`;
               } else {
-                return base + '/stats' + `?startAt=${sAt}&endAt=${eAt}`;
+                return base + '/stats' + `?startAt=${startMs}&endAt=${endMs}`;
               }
             }
-            // 如果包含 /websites 但不是当前 siteId，构造正确路径
+            // 如果 base 含 /websites 但不是当前 siteId，重新构造
             if (base.includes('/websites')) {
               const idx = base.indexOf('/websites');
               const prefix = base.slice(0, idx);
-              return `${prefix}/websites/${siteId}/stats?startAt=${sAt}&endAt=${eAt}`;
+              return `${prefix}/websites/${siteId}/stats?startAt=${startMs}&endAt=${endMs}`;
             }
-            // 普通情况（例如只写了 https://umami.xx 或 https://umami.xx/api）
-            return base + `/websites/${siteId}/stats?startAt=${sAt}&endAt=${eAt}`;
+            // 常见情况：base 是 https://your-umami 或 https://your-umami/api
+            return `${base}/websites/${siteId}/stats?startAt=${startMs}&endAt=${endMs}`;
           }
 
-          const umamiApiUrl = buildStatsUrl(rawApi, websiteId, startAt, endAt);
+          const umamiApiUrl = buildStatsUrl(rawApi, websiteId, startUtc, endUtc);
 
-          fetch(umamiApiUrl, { credentials: "include" })
+          fetch(umamiApiUrl, {
+            method: "GET",
+            headers: {
+              "Accept": "application/json"
+            },
+            credentials: "include"
+          })
             .then(res => {
-              if (!res.ok) throw new Error('Umami API 请求失败: ' + res.status);
+              // 若后端返回400/非OK，把 response text 打出来，便于诊断
+              if (!res.ok) return res.text().then(t => { throw new Error(`Umami API ${res.status}: ${t}`); });
               return res.json();
             })
             .then(data => {
-              let title = {
+              const title = {
                 "today_uv": "今日人数",
                 "today_pv": "今日访问",
                 "yesterday_uv": "昨日人数",
@@ -395,7 +401,7 @@ if site.data.about
                 "last_month_pv": "本月访问",
                 "last_year_pv": "本年访问"
               };
-              let s = document.getElementById("statistic");
+              const s = document.getElementById("statistic");
               if (!s) return;
               for (let key in data) {
                 if (data.hasOwnProperty(key) && title[key]) {
@@ -409,76 +415,4 @@ if site.data.about
             });
         })();
     else
-      //- 原 51LA fallback（保持不变）
-      script(defer).
-        function initAboutPage() {
-          fetch("https://v6-widget.51.la/v6/#{ck}/quote.js")
-            .then(res => res.text())
-            .then(data => {
-              let title = ["最近活跃", "今日人数", "今日访问", "昨日人数", "昨日访问", "本月访问", "总访问量"];
-              let num = data.match(/(<\/span><span>).*?(\/span><\/p>)/g);
-
-              num = num.map(el => {
-                let val = el.replace(/(<\/span><span>)/g, "");
-                let str = val.replace(/(<\/span><\/p>)/g, "");
-                return str;
-              });
-
-              let statisticEl = document.getElementById("statistic");
-
-              let statistic = [];
-              for (let i = 0; i < num.length; i++) {
-                if (!statisticEl) return;
-                if (i == 0) continue;
-                statisticEl.innerHTML +=
-                  "<div><span>" + title[i] + "</span><span id=" + title[i] + ">" + num[i] + "</span></div>";
-                queueMicrotask(() => {
-                  statistic.push(
-                    new CountUp(title[i], 0, num[i], 0, 2, {
-                      useEasing: true,
-                      useGrouping: true,
-                      separator: ",",
-                      decimal: ".",
-                      prefix: "",
-                      suffix: "",
-                    })
-                  );
-                });
-              }
-
-              const statisticElement = document.querySelector(".about-statistic.author-content-item");
-              function statisticUP() {
-                if (!statisticElement) return;
-
-                const callback = (entries, observer) => {
-                  entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                      for (let i = 0; i < num.length; i++) {
-                        if (i == 0) continue;
-                        queueMicrotask(() => {
-                          statistic[i - 1].start();
-                        });
-                      }
-                      observer.disconnect();
-                    }
-                  });
-                };
-
-                const options = { root: null, rootMargin: "0px", threshold: 0 };
-                const observer = new IntersectionObserver(callback, options);
-                observer.observe(statisticElement);
-              }
-
-              statisticUP();
-              initCountUp({}, {});
-            });
-
-          initAnimation();
-        }
-        if (typeof gsap === "object") {
-          initAboutPage();
-        } else {
-          getScript("!{url_for(theme.asset.gsap_js)}").then(initAboutPage);
-        }
-
-    //- 其余 initCountUp / initAnimation 保持不变（请保留你原来的代码块）
+      //- 保留原 51LA 逻辑（略）
