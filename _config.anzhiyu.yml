@@ -1344,12 +1344,14 @@ inject:
   head:
     # 自定义css
     # - <link rel="stylesheet" href="/css/custom.css" media="defer" onload="this.media='all'">
+    - <link rel="stylesheet" href="/css/custom.css"> 
     - <link rel="stylesheet" href="/css/imgloaded.css?1">
-    # - <script defer src="https://umami.zyx-2012.cn/script.js" data-website-id="638e52c9-c403-4598-b8a2-918d74ac6c19"></script>
-    - <link rel='stylesheet' href='https://cnfont-chillroundfbold.mcxiaochen.top/result.css' />
     - <link rel="stylesheet" href="/css/home.css"> # 首页文章卡片擦亮效果
     - <link rel="stylesheet" href="/css/todolist.css"> # 待办清单页
-    - <meta name="baidu-site-verification" content="codeva-lzpVCQt9AB" />
+    - <link rel='stylesheet' href='https://cnfont-chillroundfbold.mcxiaochen.top/result.css' />
+    - <script src="/js/nomyurl.js"></script>
+    - <script defer src="https://umami.mcxiaochen.top/script.js" data-website-id="4d155577-ee52-4469-a572-2156d323cc4f"></script>
+    - <meta name="baidu-site-verification" content="codeva-lzpVCQt9AB" /> 
 
   bottom:
     # 自定义js
