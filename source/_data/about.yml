@@ -90,6 +90,9 @@
     start: 2025/07/17
     end: 2035/07/17
   reward_list:
+   - name: Ruibin-Ningh
+     amount: 5
+     datatime: 2025-10-05
    - name: longxia-steven
      amount: 2.01
      datatime: 2025-09-06
