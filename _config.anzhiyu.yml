@@ -1349,7 +1349,7 @@ inject:
     - <link rel="stylesheet" href="/css/home.css"> # 首页文章卡片擦亮效果
     - <link rel="stylesheet" href="/css/todolist.css"> # 待办清单页
     - <link rel='stylesheet' href='https://cnfont-chillroundfbold.mcxiaochen.top/result.css' />
-    # - <script src="/js/nomyurl.js"></script>
+    - <script src="/js/nomyurl.js"></script>
     - <script defer src="https://umami.zyx-2012.cn/u.js" data-website-id="638e52c9-c403-4598-b8a2-918d74ac6c19"></script>
 
   bottom:
