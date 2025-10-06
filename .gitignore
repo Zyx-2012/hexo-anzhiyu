@@ -9,3 +9,4 @@ _multiconfig.yml
 .env
 _config.yml
 pnpm-lock.yaml
+source/friend.json

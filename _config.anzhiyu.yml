@@ -516,6 +516,10 @@ footer:
         shields: https://www.snzy.cn/images/snzylogo.png
         message: 十年之约 2025100609000079 履约中
 
+      - link: https://icp.ekucat.com/beian/2025102012.html
+        shields: https://icp.ekucat.com/images/icologo.png
+        message: KUCAT盟2025102012号
+
       - link: https://ipw.cn/ssl/?site=blog.zyx-2012.cn
         shields: https://static.ipw.cn/icon/ssl-s1.svg
         message: 本站支持SSL安全访问
@@ -1284,15 +1288,15 @@ greetingBox:
 # --------------------------------------
 # 文章AI摘要是否开启，会自动检索文章色summary字段，若没有则不显示
 ai_summary:
-  enable: false
-  title: 小尘のAI摘要
-  loadingText: 小尘AI正在绞尽脑汁想思路ING···
-  modelName: Deepseek-Chat
+  enable: true
+  title: Zyx-2012 の AI摘要
+  loadingText: Zyx-2012 の AI 正在绞尽脑汁想思路ING···
+  modelName: facebook/MobileLLM-R1-950M
 
 
 # 文章顶部ai摘要
 post_head_ai_description:
-  enable: false
+  enable: true
   gptName: AnZhiYu
   mode: local # 默认模式 可选值: tianli/local
   switchBtn: false # 可以配置是否显示切换按钮 以切换tianli/local

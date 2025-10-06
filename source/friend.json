@@ -1,6 +1,11 @@
 {
   "friends": [
     [
+      "星尘客栈 - 宇宙尺度的知识驿站",
+      "https://www.ruibin-ningh.top/",
+      "https://www.ruibin-ningh.top/upload/%E5%8E%BB%E8%83%8C%E6%99%AFicon%E8%AE%BE%E8%AE%A1%E5%9B%BE%E6%A0%87.png"
+    ],
+    [
       "辰渊尘の个人博客 - 「小尘」の个人博客",
       "https://blog.mcxiaochen.top/",
       "https://blog.mcxiaochen.top/favicon.ico"
@@ -36,11 +41,6 @@
       "https://www.ptoe.cc/favicon.png"
     ],
     [
-      "星尘客栈 - 宇宙尺度的知识驿站",
-      "https://www.ruibin-ningh.top/",
-      "https://www.ruibin-ningh.top/upload/%E5%8E%BB%E8%83%8C%E6%99%AFicon%E8%AE%BE%E8%AE%A1%E5%9B%BE%E6%A0%87.png"
-    ],
-    [
       "回忆航线 - 喜欢捣鼓的博主",
       "https://www.kunkunyu.com/",
       "https://api.minio.yyds.pink/moony/files/2025/02/YU%20logo%20-%20%E6%AD%A3%E6%96%B9%E5%BD%A2.svg"
@@ -59,6 +59,11 @@
       "张洪Heo - 分享设计与科技生活",
       "https://blog.zhheo.com/",
       "https://blog.zhheo.com/img/favicon4.0.webp"
+    ],
+    [
+      "iAmKevin Blog",
+      "https://imkn.top",
+      null
     ]
   ]
 }
