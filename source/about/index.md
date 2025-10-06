@@ -55,6 +55,7 @@ windows11Pro
 域名：[阿里云](https://aliyun.com/)
 Hexo 文件托管于：[GitHub](https://github.com/)
 Hexo 部署：[Netlify](https://www.netlify.com/)
-后端服务提供：[Zeabur](https://zeabur.com)
+健康监测提供：[Zeabur](https://zeabur.com)
+评论、Umami统计、图床：[腾讯云](https://cloud.tencent.com/)
 主题：[ANZHIYU](https://docs.anheyu.com/) with [Zyx_2012-Theme](https://blog.zyx-2012.cn)
 
