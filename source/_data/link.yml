@@ -121,7 +121,7 @@
     descr: 产品设计师、独立开发者、设计与科技领域自媒体博主
     siteshot: https://image.thum.io/get/width/800/crop/1600/allowJPG/wait/20/blog.zhheo.com/https://blog.zhheo.com/
     color: vip
-    tag: 
+    tag: 荐
 
   - name: iAmKevin Blog
     link: https://imkn.top
@@ -137,7 +137,7 @@
     descr: 师者，传道，授业，解惑！
     sitehot: https://image.thum.io/get/width/800/crop/1600/allowJPG/wait/20/anheyu.com/https://dusays.com
     color: vip
-    tag:
+    tag: 荐
 
   - name: 安知鱼
     link: https://blog.anheyu.com/
@@ -145,4 +145,13 @@
     descr: 生活明朗，万物可爱
     siteshot: https://npm.elemecdn.com/anzhiyu-theme-static@1.1.6/img/blog.anheyu.com.jpg
     color: vip
-    tag:
+    tag: 荐
+  
+  - name: Steven的博客
+    link: https://blog.stevenw.cc/
+    avatar: https://blog.stevenw.cc/upload/logo.png
+    descr: 没有既定的终点，只有无限的探索。
+    siteshot: https://image.thum.io/get/width/800/crop/1600/allowJPG/wait/20/anheyu.com/https://blog.stevenw.cc/
+    color: vip
+    tag: 
+  
