@@ -18,8 +18,10 @@
     #   date: 202x/xx/xx xx:xx
     # - content: xxx
     #   date: 202x/xx/xx xx:xx
-    # - content: xxx
-    #   date: 202x/xx/xx xx:xx
+    - content: 最近准备钻研一下这个东西
+      date: 2025/10/07 18:04
+      image:
+        - /img/essay/PixPin_2025-10-07_18-03-12.png
     - content: "Xe核显212FPS，见过吗？？"
       date: 2025/10/05 16:08 
       image: 
