@@ -90,26 +90,6 @@ top_img: false
 
 {% endfolding %}
 
-## 友链添加条件
-
-<div id="friendlink_checkboxs" style="padding: 0px 0px 0px 1.6rem">
-  <p>
-    <label chass="checkbox"><input type="checkbox" id="checkbox1" onclick="checkForm()">我已添加 <a href="https://blog.zyx-2012.cn">Zyx_2012</a> 的友情链接
-  </p>
-  <p>
-    <label chass="checkbox"><input type="checkbox" id="checkbox2" onclick="checkForm()">我的链接主体为 <b>个人</b>，网站类型为 <b>博客</b>
-  </p>
-  <p>
-    <label chass="checkbox"><input type="checkbox" id="checkbox3" onclick="checkForm()">我的网站可以在 <b>中国大陆</b> 内访问
-  </p>
-  <p>
-    <label chass="checkbox"><input type="checkbox" id="checkbox4" onclick="checkForm()">我的网站内容 <b>积极向上正能量</b> 并 <b>符合中华人民共和国法律</b>
-  </p>
-  <p>
-    <label chass="checkbox"><input type="checkbox" id="checkbox5" onclick="checkForm()">我的网站可以在 <b>1分钟内</b> 加载完成 <b>首屏</b>
-  </p>
-</div>
-
 自行确认以上条件都符合就可以申请友链了
 
 我在看到后会马上加，如果没及时添加请见谅，可能在忙没看到，可以发邮件给我催催 QaQ {% del 当然就算发邮箱了我也可能看不到 %}
@@ -139,3 +119,71 @@ top_img: false
 - ``siteshot`` 不能直接粘贴图片，要填URL
 - 一切资源确保可以访问
 - 链接要加 ``http://`` / ``https://``
+
+## 友链添加条件
+
+{% folding open,条件 %}
+
+<p  style="padding: 0px 0px 0px 0.8rem;">
+请<strong>勾选</strong>你符合的条件：
+</p>
+
+<div id="friendlink_checkboxs" style="padding: 0px 0px 0px 1.6rem">
+  <p>
+    <label chass="checkbox"><input type="checkbox" id="checkbox1" onclick="checkForm()">我已添加 <a href="https://blog.zyx-2012.cn">Zyx_2012</a> 的友情链接
+  </p>
+  <p>
+    <label chass="checkbox"><input type="checkbox" id="checkbox2" onclick="checkForm()">我的链接主体为 <b>个人</b>，网站类型为 <b>博客</b>
+  </p>
+  <p>
+    <label chass="checkbox"><input type="checkbox" id="checkbox3" onclick="checkForm()">我的网站可以在 <b>中国大陆</b> 内访问
+  </p>
+  <p>
+    <label chass="checkbox"><input type="checkbox" id="checkbox4" onclick="checkForm()">我的网站内容 <b>积极向上正能量</b> 并 <b>符合中华人民共和国法律</b>
+  </p>
+  <p>
+    <label chass="checkbox"><input type="checkbox" id="checkbox5" onclick="checkForm()">我的网站可以在 <b>1分钟内</b> 加载完成 <b>首屏</b>
+  </p>
+</div>
+
+{% endfolding %}
+
+<script>
+    var twikooSubmit = document.getElementsByClassName("tk-submit")[0];
+    if(twikooSubmit) {
+      twikooSubmit.style.opacity = "0";
+    }
+    function checkForm() {
+        var checkbox1 = document.getElementById("checkbox1");
+        var checkbox2 = document.getElementById("checkbox2");
+        var checkbox3 = document.getElementById("checkbox3");
+        var checkbox4 = document.getElementById("checkbox4");
+        var checkbox5 = document.getElementById("checkbox5");
+        var twikooSubmit = document.getElementsByClassName("tk-submit")[0];
+        if (checkbox1.checked && checkbox2.checked && checkbox3.checked && checkbox4.checked && checkbox5.checked) {
+            twikooSubmit.style.opacity = "1";
+            twikooSubmit.style.height = "auto";
+            twikooSubmit.style.overflow = "auto";
+            var input = document.getElementsByClassName('el-textarea__inner')[0];
+            let evt = document.createEvent('HTMLEvents');
+            evt.initEvent('input', true, true);
+            input.value = '```yml\n- name: 网站名\n  link: 网站链接\n  avatar: 网站ico\n  descr: 网站描述\n  siteshot: 网站首页图(若分类是“常规”该选项可忽略，不会用到)的 **URL**\n  color: 你想要的颜色的16进制格式 ，例如 `#123456`，若不选则填 `vip`\n  tag: 你想要的标签内容，可选\n```';
+            input.dispatchEvent(evt);
+            input.focus();
+            input.setSelectionRange(-1, -1);
+        } else {
+            twikooSubmit.style.opacity = "0";
+            twikooSubmit.style.height = "0";
+            twikooSubmit.style.overflow = "hidden";
+        }
+    }
+</script>
+
+<style>
+.tk-comments > .tk-submit {
+  opacity: 0;
+  height: 0;
+  transition: opacity 0.5s, height 0.5s;
+  overflow: hidden;
+}
+</style>
