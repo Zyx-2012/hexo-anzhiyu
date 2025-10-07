@@ -92,11 +92,23 @@ top_img: false
 
 ## 友链添加条件
 
-- 已添加[本博客](https://blog.zyx-2012.cn)的友情链接
-- 网站服务器在地球上
-- 网站可以大陆直连
-- 网站内容积极向上正能量并符合中华人民共和国法律
-- 网站可以在1分钟内加载完成首屏
+<div id="friendlink_checkboxs" style="padding: 0px 0px 0px 1.6rem">
+  <p>
+    <label chass="checkbox"><input type="checkbox" id="checkbox1" onclick="checkForm()">我已添加 <a href="https://blog.zyx-2012.cn">Zyx_2012</a> 的友情链接
+  </p>
+  <p>
+    <label chass="checkbox"><input type="checkbox" id="checkbox2" onclick="checkForm()">我的链接主体为 <b>个人</b>，网站类型为 <b>博客</b>
+  </p>
+  <p>
+    <label chass="checkbox"><input type="checkbox" id="checkbox3" onclick="checkForm()">我的网站可以在 <b>中国大陆</b> 内访问
+  </p>
+  <p>
+    <label chass="checkbox"><input type="checkbox" id="checkbox4" onclick="checkForm()">我的网站内容 <b>积极向上正能量</b> 并 <b>符合中华人民共和国法律</b>
+  </p>
+  <p>
+    <label chass="checkbox"><input type="checkbox" id="checkbox5" onclick="checkForm()">我的网站可以在 <b>1分钟内</b> 加载完成 <b>首屏</b>
+  </p>
+</div>
 
 自行确认以上条件都符合就可以申请友链了
 

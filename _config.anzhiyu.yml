@@ -903,6 +903,7 @@ aside:
     content: <span>👋🏻 Hi，我是Zyx_2012，欢迎来到我的博客！</span><br>
            <span>❓ 如有问题欢迎评论区交流！</span><br>
            <span>😫 页面异常？尝试<kbd>Ctrl</kbd>+<kbd>F5</kbd></span><br>
+           <span>⚠️ 本站暂不支持 <kbd>IPv6</kbd> 访问</span><br>
            <span>📧 如需联系我：<a href="mailto:1051270035@qq.com"><b>发送邮件🚀</b></a></span>
            <div id="welcome-info"></div> # 必须项
   card_weixin:

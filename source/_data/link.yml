@@ -138,3 +138,11 @@
     sitehot: https://image.thum.io/get/width/800/crop/1600/allowJPG/wait/20/anheyu.com/https://dusays.com
     color: vip
     tag:
+
+  - name: 安知鱼
+    link: https://blog.anheyu.com/
+    avatar: https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg
+    descr: 生活明朗，万物可爱
+    siteshot: https://npm.elemecdn.com/anzhiyu-theme-static@1.1.6/img/blog.anheyu.com.jpg
+    color: vip
+    tag:
