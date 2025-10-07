@@ -1,5 +1,5 @@
 - class_name: 朋友
-  flink_style: anzhiyu
+  flink_style: telescopic
   hundredSuffix: ""
   class_desc: 排序不分先后，大家都很优秀
   link_list:
@@ -8,7 +8,7 @@
     link: https://www.ruibin-ningh.top/
     avatar: https://www.ruibin-ningh.top/upload/%E5%8E%BB%E8%83%8C%E6%99%AFicon%E8%AE%BE%E8%AE%A1%E5%9B%BE%E6%A0%87.png
     descr: 宇宙尺度的知识驿站
-    siteshot: https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/www.ruibin-ningh.top/https://www.ruibin-ningh.top/
+    siteshot: https://image.thum.io/get/width/800/crop/1600/allowJPG/wait/20/www.ruibin-ningh.top/https://www.ruibin-ningh.top/
     color: vip
     tag: 初识
 
@@ -16,7 +16,7 @@
     link: https://blog.mcxiaochen.top/
     avatar: https://blog.mcxiaochen.top/favicon.ico
     descr: 05后，高中生，喜欢什么就做什么，内容偏技术向和保姆级，希望能对你有用QwQ
-    siteshot: https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/blog.mcxiaochen.top/https://blog.mcxiaochen.top/
+    siteshot: https://image.thum.io/get/width/800/crop/1600/allowJPG/wait/20/blog.mcxiaochen.top/https://blog.mcxiaochen.top/
     color: vip
     tag: 
 
@@ -24,7 +24,7 @@
     link: https://yaten.xyz
     avatar: https://s1.imagehub.cc/images/2025/07/30/93b3e11a33c2741a3e254bccabb47739.jpg
     descr: 等那场风，等那个你
-    siteshot: https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/yaten.xyz/https://yaten.xyz
+    siteshot: https://image.thum.io/get/width/800/crop/1600/allowJPG/wait/20/yaten.xyz/https://yaten.xyz
     color: vip
     tag: 
 
@@ -32,7 +32,7 @@
     link: https://blog.hungryhenry.cn
     avatar: https://hungryhenry.cn/favicon.ico
     descr: HungryHenry的个人网站
-    siteshot: https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/blog.hungryhenry.cn/https://blog.hungryhenry.cn
+    siteshot: https://image.thum.io/get/width/800/crop/1600/allowJPG/wait/20/blog.hungryhenry.cn/https://blog.hungryhenry.cn
     color: vip
     tag: 
 
@@ -40,7 +40,7 @@
     link: https://www.milobo.cn/
     avatar: https://www.fallguys.com/favicon.ico
     descr: 致瞬息万变之物，及亘古不变之物|
-    siteshot: https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/www.milobo.cn/https://www.milobo.cn/
+    siteshot: https://image.thum.io/get/width/800/crop/1600/allowJPG/wait/20/anheyu.com/https://www.milobo.cn/
     color: vip
     tag: 
 
@@ -48,7 +48,7 @@
     link: https://www.wgzdy.top/
     avatar: https://www.wgzdy.top/favicon.ico
     descr: 你好啊，这里是，我鬼知道の博客，也是一个小白の技术性博客，主要研究Windows，WordPress和其它好玩的东西，欢迎来玩~
-    siteshot: https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/www.wgzdy.top/https://www.wgzdy.top/
+    siteshot: https://image.thum.io/get/width/800/crop/1600/allowJPG/wait/20/www.wgzdy.top/https://www.wgzdy.top/
     color: vip
     tag: 
 
@@ -56,7 +56,7 @@
     link: https://www.dorazhang.cn/
     avatar: https://q2.qlogo.cn/headimg_dl?dst_uin=2078170660&spec=100
     descr: 这里是Zyx的小窝
-    siteshot: https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/www.dorazhang.cn/https://www.dorazhang.cn/
+    siteshot: https://image.thum.io/get/width/800/crop/1600/allowJPG/wait/20/www.dorazhang.cn/https://www.dorazhang.cn/
     color: vip
     tag: 
 
@@ -64,15 +64,28 @@
     link: https://ptoe.cc
     avatar: https://www.ptoe.cc/favicon.png
     descr: 只是一个臭写算法的
-    siteshot: https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/ptoe.cc/https://ptoe.cc
+    siteshot: https://image.thum.io/get/width/800/crop/1600/allowJPG/wait/20/ptoe.cc/https://ptoe.cc
     color: vip
     tag: 
 
-
+- class_name: 框架
+  flink_style: flexcard
+  hundredSuffix: ""
+  link_list:
+  
+  - name: Hexo
+    link: https://hexo.io/zh-tw/
+    avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+    descr: 快速、简单且强大的网站框架
+  - name: anzhiyu主题
+    link: https://hexo.anheyu.com/
+    avatar: https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg
+    descr: 生活明朗，万物可爱
+    siteshot: https://image.thum.io/get/width/800/crop/1600/allowJPG/wait/20/hexo.anheyu.com/https://hexo.anheyu.com/
 
 
 - class_name: 常规
-  flink_style: telescopic
+  flink_style: anzhiyu
   hundredSuffix: ""
   class_desc: 优秀站长们的站点
   link_list:
@@ -81,7 +94,7 @@
     link: https://www.kunkunyu.com/
     avatar: https://api.minio.yyds.pink/moony/files/2025/02/YU%20logo%20-%20%E6%AD%A3%E6%96%B9%E5%BD%A2.svg
     descr: 回忆航线是个人维护站点，用于分享个人日常分享
-    siteshot: https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/www.kunkunyu.com/https://www.kunkunyu.com/
+    siteshot: https://image.thum.io/get/width/800/crop/1600/allowJPG/wait/20/www.kunkunyu.com/https://www.kunkunyu.com/
     color: vip
     tag: 
 
@@ -89,7 +102,7 @@
     link: https://maplezz.com
     avatar: https://maplezz.com/favicon/avatar.webp
     descr: 一个独立开发者的精神自留地
-    siteshot: https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/maplezz.com/https://maplezz.com
+    siteshot: https://image.thum.io/get/width/800/crop/1600/allowJPG/wait/20/maplezz.com/https://maplezz.com
     color: vip
     tag: 
 
@@ -97,7 +110,7 @@
     link: https://blog.xindu.site/
     avatar: https://api.minio.xindu.site/blog.cnkj.site/backup/logo-doiw.png
     descr: 专业的技术,专业的网站,专业的人,只想专业的玩NAS
-    siteshot: https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/blog.xindu.site/https://blog.xindu.site/
+    siteshot: https://image.thum.io/get/width/800/crop/1600/allowJPG/wait/20/blog.xindu.site/https://blog.xindu.site/
     color: vip
     tag: 
 
@@ -105,7 +118,7 @@
     link: https://blog.zhheo.com/
     avatar: https://blog.zhheo.com/img/favicon4.0.webp
     descr: 产品设计师、独立开发者、设计与科技领域自媒体博主
-    siteshot: https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/blog.zhheo.com/https://blog.zhheo.com/
+    siteshot: https://image.thum.io/get/width/800/crop/1600/allowJPG/wait/20/blog.zhheo.com/https://blog.zhheo.com/
     color: vip
     tag: 
 
@@ -113,6 +126,6 @@
     link: https://imkn.top
     avatar: 
     descr: 一个科技博客丫
-    sitehot: https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/anheyu.com/https://imkn.top/
+    sitehot: https://image.thum.io/get/width/800/crop/1600/allowJPG/wait/20/anheyu.com/https://imkn.top/
     color: vip
     tag:

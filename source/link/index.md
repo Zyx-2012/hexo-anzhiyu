@@ -14,6 +14,8 @@ top_img: false
 
 {% del 被大佬博客通过友链的网站更容易过审本站友链 %}
 
+默认分类为 ``大佬们`` ，与博主认识的会被分到 ``朋友们``
+
 {% endfolding %}
 
 {% folding open, 免责声明 %}
@@ -102,9 +104,10 @@ top_img: false
 
 > 注：
 > 未提供站点预览图的，本站会根据贵站链接调用以下 API 自动获取贵站的站点截图。
+> 温馨提示：有加载动画或开屏弹窗等，建议自行截图
 > 
 > ```url
-> https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/anheyu.com/https://<你的域名>/
+> https://image.thum.io/get/width/800/crop/1600/allowJPG/wait/20/anheyu.com/https://<你的域名>/
 > ```
 
 ## 申请格式
@@ -114,5 +117,7 @@ top_img: false
   link: 网站链接
   avatar: 网站ico
   descr: 网站描述
-  siteshot: 网站首页图
+  siteshot: 网站首页图(若分类是“大佬们”该选项可忽略，不会用到)的 **URL**
+  color: 你想要的颜色的16进制格式 ，例如 `#123456`，若不选则填 `vip`
+  tag: 你想要的标签内容，可选
 ```
