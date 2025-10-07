@@ -630,7 +630,7 @@ const anzhiyu = {
     if (!input) return;
     const evt = new Event("input", { cancelable: true, bubbles: true });
     const defaultPlaceholder =
-    "- name: 网站名\n  link: 网站链接\n  avatar: 网站ico\n  descr: 网站描述\n  siteshot: 网站首页图(若分类是“常规”该选项可忽略，不会用到)的 **URL**\n  color: 你想要的颜色的16进制格式 ，例如 `#123456`，若不选则填 `vip`\n  tag: 你想要的标签内容，可选";
+    "```yml\n- name: 网站名\n  link: 网站链接\n  avatar: 网站ico\n  descr: 网站描述\n  siteshot: 网站首页图(若分类是“常规”该选项可忽略，不会用到)的 **URL**\n  color: 你想要的颜色的16进制格式 ，例如 `#123456`，若不选则填 `vip`\n  tag: 你想要的标签内容，可选\n```";
     input.value = this.getConfigIfPresent(GLOBAL_CONFIG.linkPageTop, "addFriendPlaceholder", defaultPlaceholder);
     input.dispatchEvent(evt);
     input.focus();
