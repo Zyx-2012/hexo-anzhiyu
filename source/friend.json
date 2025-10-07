@@ -41,29 +41,14 @@
       "https://www.ptoe.cc/favicon.png"
     ],
     [
-      "回忆航线 - 喜欢捣鼓的博主",
-      "https://www.kunkunyu.com/",
-      "https://api.minio.yyds.pink/moony/files/2025/02/YU%20logo%20-%20%E6%AD%A3%E6%96%B9%E5%BD%A2.svg"
+      "Hexo",
+      "https://hexo.io/zh-tw/",
+      "https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg"
     ],
     [
-      "猫普的精神世界",
-      "https://maplezz.com",
-      "https://maplezz.com/favicon/avatar.webp"
-    ],
-    [
-      "新都在 - Carol 小屋",
-      "https://blog.xindu.site/",
-      "https://api.minio.xindu.site/blog.cnkj.site/backup/logo-doiw.png"
-    ],
-    [
-      "张洪Heo - 分享设计与科技生活",
-      "https://blog.zhheo.com/",
-      "https://blog.zhheo.com/img/favicon4.0.webp"
-    ],
-    [
-      "iAmKevin Blog",
-      "https://imkn.top",
-      null
+      "anzhiyu主题",
+      "https://hexo.anheyu.com/",
+      "https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg"
     ]
   ]
 }
