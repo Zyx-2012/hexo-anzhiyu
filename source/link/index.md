@@ -63,23 +63,73 @@ top_img: false
 
 <!-- endtab -->
 
-<!-- tab Fuild -->
+<!-- tab ☀️Volantis -->
+
+```json
+{
+  "title": "折腾日记",
+  "screenshot": "https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/anheyu.com/https://blog.zyx-2012.cn/",
+  "url": "https://blog.zyx-2012.cn/",
+  "avatar": "https://blog.zyx-2012.cn/favicon.ico",
+  "description": "专注于笔记、分享的博客",
+  "keywords": "Zyx_2012"
+}
+```
+
+<!-- endtab -->
+
+<!-- tab 🌴General -->
+
+| 名称       | 数值                                                                      |
+| :--------- | :------------------------------------------------------------------------ |
+| 站点名称   | 折腾日记                                                                 |
+| 站点截图   | https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/anheyu.com/https://blog.zyx-2012.cn/ |
+| 站点链接   | https://blog.zyx-2012.cn/                                                 |
+| 站长头像   | https://blog.zyx-2012.cn/favicon.ico                                      |
+| 站点描述   | 专注于笔记、分享的博客                                                   |
+| 站点关键词 | Zyx_2012, 折腾, 编程, 博客                                               |
+
+<!-- endtab -->
+
+<!-- tab ☁️Fluid -->
 
 ```yml
 - {
     title: "折腾日记",
     intro: "专注于笔记、分享的博客",
     link: "https://blog.zyx-2012.cn/",
-    image: "https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/anheyu.com/https://blog.zyx-2012.cn/",
+    image: "https://blog.zyx-2012.cn/favicon.ico",
   }
 ```
+<!-- endtab --> 
 
-<!-- endtab -->
+<!-- tab ☀️Volantis -->
 
-<!-- tab html -->
+```json
+{
+  "title": "折腾日记",
+  "avatar": "https://blog.zyx-2012.cn/favicon.ico",
+  "screenshot": "https://image.thum.io/get/width/400/crop/800/allowJPG/wait/20/anheyu.com/https://blog.zyx-2012.cn/",
+  "url": "https://blog.zyx-2012.cn/",
+  "description": "专注于笔记、分享的博客",
+  "group": "技术博客"
+}
+```
 
-```HTML
-<a href="https://blog.zyx-2012.cn/" rel="external nofollow">折腾日记</a>
+<!-- endtab --> 
+
+<!-- tab Html -->
+
+```html
+<a href="https://blog.zyx-2012.cn/" rel="external nofollow">折腾日记 - 专注于笔记、分享的博客</a>
+```
+
+<!-- endtab --> 
+
+<!-- tab Jade -->
+
+```pug
+a(href='https://blog.zyx-2012.cn/' rel="external nofollow") 折腾日记 - 专注于笔记、分享的博客
 ```
 
 <!-- endtab -->
@@ -128,25 +178,23 @@ top_img: false
 请<strong>勾选</strong>你符合的条件：
 </p>
 
-<div id="friendlink_checkboxs" style="padding: 0px 0px 0px 1.6rem">
+<div id="friendlink_checkboxs" style="padding: 0px 0px 0px 1.6rem;">
   <p>
-    <label chass="checkbox"><input type="checkbox" id="checkbox1" onclick="checkForm()">我已添加 <a href="https://blog.zyx-2012.cn">Zyx_2012</a> 的友情链接
+    <label class="checkbox"><input type="checkbox" id="checkbox1" onclick="checkForm()">我已添加 <b>折腾日记 | Zyx_2012</b> 博客的友情链接</label>
   </p>
   <p>
-    <label chass="checkbox"><input type="checkbox" id="checkbox2" onclick="checkForm()">我的链接主体为 <b>个人</b>，网站类型为 <b>博客</b>
+    <label class="checkbox"><input type="checkbox" id="checkbox2" onclick="checkForm()">我的链接主体为 <b>个人</b>，网站类型为<b>博客</b></label>
   </p>
   <p>
-    <label chass="checkbox"><input type="checkbox" id="checkbox3" onclick="checkForm()">我的网站可以在 <b>中国大陆</b> 内访问
+    <label class="checkbox"><input type="checkbox" id="checkbox3" onclick="checkForm()">我的网站现在可以在中国大陆区域正常访问</label>
   </p>
   <p>
-    <label chass="checkbox"><input type="checkbox" id="checkbox4" onclick="checkForm()">我的网站内容 <b>积极向上正能量</b> 并 <b>符合中华人民共和国法律</b>
+    <label class="checkbox"><input type="checkbox" id="checkbox4" onclick="checkForm()">网站内容符合中国大陆法律法规</label>
   </p>
   <p>
-    <label chass="checkbox"><input type="checkbox" id="checkbox5" onclick="checkForm()">我的网站可以在 <b>1分钟内</b> 加载完成 <b>首屏</b>
+    <label class="checkbox"><input type="checkbox" id="checkbox5" onclick="checkForm()">我的网站可以在1分钟内加载完成首屏</label>
   </p>
 </div>
-
-{% endfolding %}
 
 <script>
     var twikooSubmit = document.getElementsByClassName("tk-submit")[0];
@@ -187,3 +235,5 @@ top_img: false
   overflow: hidden;
 }
 </style>
+
+{% endfolding %}

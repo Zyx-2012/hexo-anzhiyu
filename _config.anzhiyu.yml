@@ -1289,7 +1289,7 @@ greetingBox:
 # --------------------------------------
 # 文章AI摘要是否开启，会自动检索文章色summary字段，若没有则不显示
 ai_summary:
-  enable: true
+  enable: false
   title: Zyx-2012 の AI摘要
   loadingText: Zyx-2012 の AI 正在绞尽脑汁想思路ING···
   modelName: facebook/MobileLLM-R1-950M
@@ -1297,7 +1297,7 @@ ai_summary:
 
 # 文章顶部ai摘要
 post_head_ai_description:
-  enable: true
+  enable: false
   gptName: AnZhiYu
   mode: local # 默认模式 可选值: tianli/local
   switchBtn: false # 可以配置是否显示切换按钮 以切换tianli/local
@@ -1309,7 +1309,7 @@ post_head_ai_description:
 
 # 快捷键配置
 shortcutKey:
-  enable: true
+  enable: false
   delay: 100 # 所有键位延时触发而不是立即触发（包括shift，以解决和浏览器键位冲突问题）
   shiftDelay: 200 # shift按下延时多久开启
 
