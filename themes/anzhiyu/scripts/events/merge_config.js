@@ -559,7 +559,7 @@ hexo.extend.filter.register(
       diytitle: {
         enable: true,
         leaveTitle: "404 Not Found",
-        backTitle: "200 OK",
+        backTitle: "♪(^∇^*) 嘿嘿，被你发现了",
       },
       comment_barrage_config: {
         enable: false,

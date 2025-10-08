@@ -1213,7 +1213,7 @@ LA:
 diytitle:
   enable: true
   leaveTitle: 404 Not Found
-  backTitle: 200 OK
+  backTitle: ♪(^∇^*) 嘿嘿，被你发现了
 
 # 留言弹幕配置
 comment_barrage_config:
