@@ -1,7 +1,7 @@
 const YML = require('yamljs');
 const fs = require('fs');
 
-const blacklist = ["安知鱼", "友站名称2", "友站名称3"]; // 不想订阅的友链名
+const blacklist = []; // 不想订阅的友链名
 
 let friends = [];
 const data_f = YML.parse(fs.readFileSync('source/_data/link.yml').toString().replace(/(?<=rss:)\s*\n/g, ' ""\n'));
