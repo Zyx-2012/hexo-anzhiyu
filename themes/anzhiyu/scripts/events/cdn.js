@@ -64,6 +64,11 @@ hexo.extend.filter.register("before_generate", () => {
       file: "js/anzhiyu/people.js",
       version,
     },
+    site_status_monitor_js: {
+      name: "hexo-theme-anzhiyu",
+      file: "js/site-status-monitor.js",
+      version,
+    },
   };
 
   const minFile = file => {

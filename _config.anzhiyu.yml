@@ -1452,8 +1452,8 @@ CDN:
     # gsap_js:
     busuanzi: https://events.vercount.one/js
     # rightmenu:
-    waterfall: /cdn/waterfall.js
-    ali_iconfont_css: /cdn/ali_iconfont_css.css
+    # waterfall: /cdn/waterfall.js
+    # ali_iconfont_css: /cdn/ali_iconfont_css.css
     # accesskey_js:
 
 # Umami
