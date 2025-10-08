@@ -196,7 +196,7 @@ envelope_comment:
 sitemap:
   path: sitemap.xml
 baidusitemap:
-path: baidusitemap.xml
+  path: baidusitemap.xml
 
 # hexo-safego安全跳转插件
 # 参见 https://blog.liushen.fun/posts/1dfd1f41/
@@ -213,6 +213,8 @@ hexo_safego:
     html_file_name: 'go.html'   # 重定向页面的文件名
     ignore_attrs:               # 忽略处理的 HTML 结构
       - 'data-fancybox'
+      - 'cf-friends-link'
+
 
   # 容器与页面设置
   scope:
@@ -221,16 +223,15 @@ hexo_safego:
     apply_pages:                # 应用的页面路径
       - "/"
     exclude_pages:              # 排除的页面路径
-
   # 域名白名单
   whitelist:
     domain_whitelist:           # 允许的白名单域名，通过字符串匹配实现
-      # - "localhost"
+      - "localhost"
       - "blog.zyx-2012.cn"
 
   # 页面外观设置
   appearance:
-    avatar: /img/avatar.png     # 跳转页面头像路径
+    avatar: /favicon.ico     # 跳转页面头像路径
     title: "拦截页"             # 跳转页面标题
     subtitle: "安全中心"        # 跳转页面副标题
     darkmode: auto             # 是否启用深色模式
@@ -250,7 +251,7 @@ baidu_url_submit:
 # 文档: https://github.com/willow-god/hexo-ai-summary
 aisummary:
   # 基本控制
-  enable: true              # 是否启用插件，如果关闭，也可以在文章顶部的is_summary字段单独设置是否启用，反之也可以配置是否单独禁用
+  enable: false              # 是否启用插件，如果关闭，也可以在文章顶部的is_summary字段单独设置是否启用，反之也可以配置是否单独禁用
   cover_all: false           # 是否覆盖已有摘要，默认只生成缺失的，注意开启后，可能会导致过量的api使用！
   summary_field: summary     # 摘要写入字段名（建议保留为 summary），重要配置，谨慎修改！！！！！！！
   logger: 1                  # 日志等级（0=仅错误，1=生成+错误，2=全部）

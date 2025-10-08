@@ -1409,7 +1409,7 @@ CDN:
     # pjax:
     # blueimp_md5:
     # valine:
-    twikoo: https://cdnjs.cloudflare.com/ajax/libs/twikoo/1.6.44/twikoo.min.js
+    twikoo: /cdn/1-6-44-twikoo.min.js
     # waline_js:
     # waline_css:
     # sharejs:
@@ -1425,8 +1425,8 @@ CDN:
     # instantpage:
     # typed:
     # pangu:
-    # fancybox_css:
-    # fancybox:
+    fancybox_css: /cdn/fancybox.css
+    fancybox: /cdn/fancybox.umd.js
     # medium_zoom:
     # snackbar_css:
     # snackbar:
@@ -1452,8 +1452,8 @@ CDN:
     # gsap_js:
     busuanzi: https://events.vercount.one/js
     # rightmenu:
-    # waterfall:
-    # ali_iconfont_css:
+    waterfall: /cdn/waterfall.js
+    ali_iconfont_css: /cdn/ali_iconfont_css.css
     # accesskey_js:
 
 # Umami

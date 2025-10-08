@@ -82,7 +82,7 @@
     music_tips: 音乐偏好
     music_title: 纯音乐、轻音乐、钢琴曲
     music_bg: /img/music/黑色钢琴.png
-    music_link: /music
+    music_link: /music/?id=14288163236&server=netease
   tenyear:
     enable: true 
     tips: 十年之约
