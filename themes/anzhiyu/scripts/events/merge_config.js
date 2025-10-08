@@ -558,8 +558,8 @@ hexo.extend.filter.register(
       },
       diytitle: {
         enable: true,
-        leaveTitle: "w(ﾟДﾟ)w 不要走！再看看嘛！",
-        backTitle: "♪(^∇^*)欢迎肥来！",
+        leaveTitle: "404 Not Found",
+        backTitle: "200 OK",
       },
       comment_barrage_config: {
         enable: false,
