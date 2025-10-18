@@ -141,7 +141,7 @@ abbrlink:
   force: false #启用强制模式，在这种模式下，插件将忽略缓存，并为每个帖子计算abbrlink，即使它已经有了abbrlink。
 
 aplayer:
-  meting: true                                                                                                                                                                                                                                                                                                                                                                                       
+  meting: true
   asset_inject: false
 
 bangumi: # 追番设置
