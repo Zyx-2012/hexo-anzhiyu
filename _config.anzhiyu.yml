@@ -513,8 +513,16 @@ footer:
         message: 萌ICP备20254037号
 
       - link: https://www.snzy.cn/website/2025100609000079.html
-        shields: https://www.snzy.cn/images/snzylogo.png
+        shields: /img/十年之约.svg
         message: 十年之约 2025100609000079 履约中
+
+      - link: https://umami.zyx-2012.cn/websites/638e52c9-c403-4598-b8a2-918d74ac6c19
+        shields: /img/umami.svg
+        message: Umami统计
+
+      - link: https://health.zyx-2012.cn/status/blog
+        shields: /img/kuma.svg
+        message: Uptime-Kuma健康监测
 
       - link: https://icp.ekucat.com/beian/2025102012.html
         shields: https://icp.ekucat.com/images/icologo.png
@@ -523,14 +531,6 @@ footer:
       - link: https://ipw.cn/ssl/?site=blog.zyx-2012.cn
         shields: https://static.ipw.cn/icon/ssl-s1.svg
         message: 本站支持SSL安全访问
-
-      - link: https://umami.zyx-2012.cn/websites/638e52c9-c403-4598-b8a2-918d74ac6c19
-        shields: https://umami.zyx-2012.cn/favicon.ico
-        message: Umami统计
-
-      - link: https://health.zyx-2012.cn/status/blog
-        shields: https://health.zyx-2012.cn/icon.svg
-        message: Uptime-Kuma健康监测
         
       # - link: http://creativecommons.org/licenses/by-nc-sa/4.0/
       #   shields: https://npm.elemecdn.com/anzhiyu-blog@2.2.0/img/badge/Copyright-BY-NC-SA.svg

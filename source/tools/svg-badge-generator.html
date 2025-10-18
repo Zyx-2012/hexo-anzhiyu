@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SVG 徽章（Badge）生成器 — 单文件</title>
+  <style>
+    :root{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+    body{padding:18px;background:#0f172a;color:#e6eef8}
+    .card{background:linear-gradient(180deg,#0b1220,#0a1220);padding:16px;border-radius:10px;box-shadow:0 6px 20px rgba(2,6,23,.6);max-width:980px;margin:0 auto}
+    label{display:block;margin:8px 0 6px;font-size:13px;color:#9fb0d6}
+    input[type="text"], input[type="color"], input[type="url"], select, textarea{width:100%;padding:8px;border-radius:6px;border:1px solid rgba(255,255,255,.06);background:#081223;color:#e6eef8}
+    .row{display:flex;gap:10px}
+    .col{flex:1}
+    button{margin-top:10px;padding:8px 12px;border-radius:8px;border:0;background:#4f46e5;color:white;cursor:pointer}
+    .preview{margin-top:12px;padding:12px;border-radius:8px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));min-height:54px}
+    textarea{height:140px;font-family:monospace;font-size:12px}
+    .controls{display:flex;gap:8px;flex-wrap:wrap}
+    small{color:#7d98c0}
+    .footer{margin-top:10px;color:#6f8bb2;font-size:13px}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h3 style="margin:0 0 8px">SVG 徽章生成器（单文件）</h3>
+    <small>可上传图标或使用图标链接；设置左右两端文字与颜色；实时预览并导出 SVG 代码。</small>
+
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+      <div>
+        <label>左侧文字（Label）</label>
+        <input id="leftText" type="text" value="萌ICP备" />
+      </div>
+      <div>
+        <label>右侧文字（Message）</label>
+        <input id="rightText" type="text" value="20254037号" />
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:8px">
+      <div class="col">
+        <label>左侧背景色</label>
+        <input id="leftColor" type="color" value="#555555" />
+      </div>
+      <div class="col">
+        <label>右侧背景色</label>
+        <input id="rightColor" type="color" value="#7474e1" />
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:1fr 160px;gap:12px;margin-top:8px;align-items:end">
+      <div>
+        <label>图标：上传或输入外部图片 URL（优先使用上传）</label>
+        <input id="iconUrl" type="url" placeholder="https://example.com/icon.png" />
+      </div>
+      <div>
+        <label>上传图标（可选）</label>
+        <input id="iconFile" type="file" accept="image/*" />
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:8px">
+      <div style="flex:1">
+        <label>徽章高度（px）</label>
+        <input id="height" type="text" value="20" />
+      </div>
+      <div style="width:160px">
+        <label>圆角（rx）</label>
+        <input id="rx" type="text" value="3" />
+      </div>
+    </div>
+
+    <div style="margin-top:10px" class="controls">
+      <button id="genBtn">生成 SVG</button>
+      <button id="copyBtn">复制 SVG 到剪贴板</button>
+      <button id="downloadBtn">下载 SVG 文件</button>
+      <button id="previewOnly">只预览（不复制）</button>
+    </div>
+
+    <div class="preview" id="preview" aria-live="polite"></div>
+
+    <label style="margin-top:10px">SVG 代码</label>
+    <textarea id="svgCode"></textarea>
+
+    <div class="footer">提示：生成时会把上传图标转换为 data URL 嵌入，如果使用外链，某些浏览器/环境可能因 CORS 无法显示或下载，建议上传文件以便嵌入。</div>
+  </div>
+
+<script>
+  const leftTextEl = document.getElementById('leftText');
+  const rightTextEl = document.getElementById('rightText');
+  const leftColorEl = document.getElementById('leftColor');
+  const rightColorEl = document.getElementById('rightColor');
+  const iconUrlEl = document.getElementById('iconUrl');
+  const iconFileEl = document.getElementById('iconFile');
+  const heightEl = document.getElementById('height');
+  const rxEl = document.getElementById('rx');
+  const preview = document.getElementById('preview');
+  const svgCode = document.getElementById('svgCode');
+
+  let embeddedIconData = null; // dataURL if uploaded
+
+  iconFileEl.addEventListener('change', e => {
+    const f = e.target.files && e.target.files[0];
+    if(!f) return embeddedIconData = null;
+    const reader = new FileReader();
+    reader.onload = () => { embeddedIconData = reader.result; generateSVG(); };
+    reader.readAsDataURL(f);
+  });
+
+  function measureText(text, fontSize=11, fontFamily='Verdana'){
+    const c = document.createElement('canvas');
+    const ctx = c.getContext('2d');
+    ctx.font = `${fontSize}px ${fontFamily}`;
+    return ctx.measureText(text).width;
+  }
+
+  function escapeXml(unsafe){
+    return unsafe.replace(/[<>&\"']/g, function(c){
+      switch(c){case '<':return '&lt;';case '>':return '&gt;';case '&':return '&amp;';case '"':return '&quot;';case "'":return '&apos;'}
+    });
+  }
+
+  function generateSVG(){
+    const leftText = (leftTextEl.value || '').toString();
+    const rightText = (rightTextEl.value || '').toString();
+    const leftColor = leftColorEl.value || '#555';
+    const rightColor = rightColorEl.value || '#4f46e5';
+    const iconUrl = iconUrlEl.value && iconUrlEl.value.trim();
+    const height = Math.max(12, parseInt(heightEl.value)||20);
+    const rx = parseInt(rxEl.value)||3;
+    const fontSize = Math.round(height * 0.55); // heuristic
+    const padding = Math.round(height * 0.6);
+    const iconSize = Math.round(height * 0.92);
+
+    // decide whether we have an icon
+    const hasIcon = Boolean(embeddedIconData) || Boolean(iconUrl);
+    const iconHref = embeddedIconData || iconUrl || null;
+
+    // measure text widths
+    const leftTextWidth = Math.max(0, measureText(leftText, fontSize));
+    const rightTextWidth = Math.max(0, measureText(rightText, fontSize));
+
+    const leftWidth = Math.round(leftTextWidth + padding + (hasIcon? iconSize + 6:0));
+    const rightWidth = Math.round(rightTextWidth + padding);
+    const totalWidth = leftWidth + rightWidth;
+
+    // positions
+    const leftTextX = Math.round((leftWidth - (hasIcon? iconSize+6:0)) / 2 + (hasIcon? iconSize+6:0));
+    const rightTextX = Math.round(leftWidth + rightWidth/2);
+    const textY = Math.round((height + fontSize*0.35) / 2);
+
+    // build svg string
+    let svg = [];
+    svg.push(`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${totalWidth}" height="${height}" viewBox="0 0 ${totalWidth} ${height}" role="img" aria-label="${escapeXml(leftText+' '+rightText)}">`);
+    svg.push(`<defs><linearGradient id="ggrad" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".08"/><stop offset="1" stop-opacity=".08"/></linearGradient></defs>`);
+    svg.push(`<g clip-path="url(#clip0)">`);
+    svg.push(`<rect width="${leftWidth}" height="${height}" fill="${leftColor}" rx="${rx}"/>`);
+    svg.push(`<rect x="${leftWidth}" width="${rightWidth}" height="${height}" fill="${rightColor}" rx="${rx}"/>`);
+    svg.push(`</g>`);
+    svg.push(`<rect width="${totalWidth}" height="${height}" fill="url(#ggrad)" rx="${rx}" />`);
+
+    if(hasIcon && iconHref){
+      const imgX = 4;
+      const imgY = Math.round((height - iconSize)/2);
+      svg.push(`<image x="${imgX}" y="${imgY}" width="${iconSize}" height="${iconSize}" preserveAspectRatio="xMidYMid meet" xlink:href="${iconHref}" />`);
+    }
+
+    // texts (centered)
+    svg.push(`<text x="${leftTextX}" y="${textY}" fill="#ffffff" font-family="Verdana,Arial,sans-serif" font-size="${fontSize}px" text-anchor="middle" dominant-baseline="central">${escapeXml(leftText)}</text>`);
+    svg.push(`<text x="${rightTextX}" y="${textY}" fill="#ffffff" font-family="Verdana,Arial,sans-serif" font-size="${fontSize}px" text-anchor="middle" dominant-baseline="central">${escapeXml(rightText)}</text>`);
+
+    svg.push(`</svg>`);
+
+    const svgStr = svg.join('\n');
+    preview.innerHTML = svgStr;
+    svgCode.value = svgStr;
+    return svgStr;
+  }
+
+  document.getElementById('genBtn').addEventListener('click', generateSVG);
+  document.getElementById('previewOnly').addEventListener('click', ()=>{generateSVG();});
+
+  document.getElementById('copyBtn').addEventListener('click', async ()=>{
+    const s = generateSVG();
+    try{ await navigator.clipboard.writeText(s); alert('已复制到剪贴板'); }catch(e){ alert('复制失败，请手动选中复制'); }
+  });
+
+  document.getElementById('downloadBtn').addEventListener('click', ()=>{
+    const s = generateSVG();
+    const blob = new Blob([s],{type:'image/svg+xml;charset=utf-8'});
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'badge.svg';
+    document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+  });
+
+  // generate on load
+  generateSVG();
+</script>
+</body>
+</html>

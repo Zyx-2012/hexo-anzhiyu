@@ -1,23 +1,192 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="129" height="20" role="img" aria-label="萌ICP备：20257721号">
-  <title>萌ICP备：20254037号</title>
-  <linearGradient id="s" x2="0" y2="100%">
-    <stop offset="0" stop-color="#bbb" stop-opacity=".1"/>
-    <stop offset="1" stop-opacity=".1"/>
-  </linearGradient>
-  <clipPath id="r">
-    <rect width="129" height="20" rx="3" fill="#fff"/>
-  </clipPath>
-  <g clip-path="url(#r)">
-    <rect width="158" height="20" fill="#555"/>
-    <rect x="48" width="91" height="20" fill="#e1d492"/>
-    <rect width="159" height="20" fill="url(#s)"/>
-  </g>
-  <g fill="#fff" text-anchor="middle" font-family="Verdana,Geneva,DejaVu Sans,sans-serif" text-rendering="geometricPrecision" font-size="110">
-    <text aria-hidden="true" x="235" y="150" fill="#010101" fill-opacity=".3" transform="scale(.1)" textLength="410">萌ICP备</text>
-    <text x="235" y="140" transform="scale(.1)" fill="#fff" textLength="410">萌ICP备</text>
-    
-    <!-- 修正数字阴影与正文对齐 -->
-    <text aria-hidden="true" x="890" y="150" fill="#ccc" fill-opacity=".3" transform="scale(.1)" textLength="710">20257721号</text>
-    <text x="890" y="140" transform="scale(.1)" fill="#333" textLength="710">20254037号</text>
-  </g>
-</svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="159"
+   height="20"
+   role="img"
+   aria-label="萌ICP备: 20254037号"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="萌ICP备：20254037号.svg"
+   xml:space="preserve"
+   inkscape:version="1.4.2 (ebf0e940d0, 2025-05-08)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+     id="defs8" /><sodipodi:namedview
+     id="namedview8"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.1118031"
+     inkscape:cx="58.913309"
+     inkscape:cy="-53.06695"
+     inkscape:window-width="1900"
+     inkscape:window-height="1022"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g8" /><title
+     id="title1">萌ICP备：20254037号</title><linearGradient
+     id="s"
+     x2="0"
+     y2="100%"><stop
+       offset="0"
+       stop-color="#bbb"
+       stop-opacity=".1"
+       id="stop1" /><stop
+       offset="1"
+       stop-opacity=".1"
+       id="stop2" /></linearGradient><clipPath
+     id="r"><rect
+       width="159"
+       height="20"
+       rx="3"
+       fill="#fff"
+       id="rect2" /></clipPath><g
+     clip-path="url(#r)"
+     id="g5"><rect
+       width="68"
+       height="20"
+       fill="#555"
+       id="rect3" /><rect
+       x="68"
+       width="91"
+       height="20"
+       fill="#7474e1"
+       id="rect4" /><rect
+       width="159"
+       height="20"
+       fill="url(#s)"
+       id="rect5" /></g><g
+     fill="#fff"
+     text-anchor="middle"
+     font-family="Verdana,Geneva,DejaVu Sans,sans-serif"
+     text-rendering="geometricPrecision"
+     font-size="110"
+     id="g8"><text
+       aria-hidden="true"
+       x="435"
+       y="150"
+       fill="#010101"
+       fill-opacity="0.3"
+       transform="scale(0.1)"
+       textLength="410"
+       id="text5"
+       lengthAdjust="spacing">萌ICP备</text><text
+       x="435"
+       y="140"
+       transform="scale(0.1)"
+       fill="#ffffff"
+       textLength="410"
+       id="text6"
+       lengthAdjust="spacing">萌ICP备</text><text
+       aria-hidden="true"
+       x="1125"
+       y="150"
+       fill="#010101"
+       fill-opacity="0.3"
+       transform="scale(0.1)"
+       textLength="810"
+       id="text7"
+       lengthAdjust="spacing">20254037号</text><text
+       x="1125"
+       y="140"
+       transform="scale(0.1)"
+       fill="#ffffff"
+       textLength="810"
+       id="text8"
+       lengthAdjust="spacing">20254037号</text><image
+       width="19.285147"
+       height="19.285147"
+       preserveAspectRatio="none"
+       xlink:href="data:img/jpg;base64,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
+n+gn+on4L4cd/2hQhc+BAAAAAElFTkSuQmCC"
+       id="image1"
+       x="4.4887352"
+       y="0.28482518" /></g></svg>
