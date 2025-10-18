@@ -58,3 +58,6 @@ Hexo 部署：[Netlify](https://www.netlify.com/)
 评论、Umami统计、图床：[腾讯云](https://cloud.tencent.com/)
 主题：[ANZHIYU](https://docs.anheyu.com/) with [Zyx_2012-Theme](https://blog.zyx-2012.cn)
 
+## 想说的
+
+自开学以来，本人在线时间直线下滑，大部分上线时间在周末，若评论或友链申请没有及时更新请见谅

@@ -12,6 +12,8 @@ top_img: false
 
 本人自开学以来在线强度呈滑梯式减少，没有及时加到的友链请见谅~
 
+**大多数情况** ，申请的友链会在下一个周末进行审查
+
 {% del 被大佬博客通过友链的网站更容易过审本站友链 %}
 
 默认分类为 ``常规`` ，与博主认识的会被分到 ``朋友``
@@ -136,7 +138,7 @@ a(href='https://blog.zyx-2012.cn/' rel="external nofollow") 折腾日记 - 专�
 
 {% endtabs %}
 
-我的rss: [atom.xml](https://blog.zyx-2012.cn/atom.xml)
+我的rss订阅源: [atom.xml](https://blog.zyx-2012.cn/atom.xml)
 
 {% endfolding %}
 
