@@ -48,7 +48,6 @@ windows11Pro
 - Email: <a href="mailto:zyx_2012_mail@qq.com">zyx_2012_mail@qq.com</a>
 - Github: [@Zyx-2012](https://github.com/Zyx-2012)
 - bilibili: [@Zyx-2012](https://space.bilibili.com/3546582964243214)
-- Telegram: [@Zyx_2012](https://t.me/Zyx_2012)
 
 ## 关于本站
 
