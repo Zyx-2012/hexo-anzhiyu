@@ -34,8 +34,8 @@
     #   date: 202x/xx/xx xx:xx
     # - content: xxx
     #   date: 202x/xx/xx xx:xx
-    # - content: xxx
-    #   date: 202x/xx/xx xx:xx
+    - content: 最近有一个很大胆的想法：打算自己写（借鉴别人博客的样式）个hexo主题
+      date: 2025/10/22 21:01
     - content: 博客我回来了:)
       date: 2025/10/18 10:58
     - content: 扁桃体炸了QAQ

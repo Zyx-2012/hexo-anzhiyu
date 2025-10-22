@@ -549,7 +549,7 @@ footer:
       - title: email
         link: mailto:1051270035@qq.com
         icon: anzhiyu-icon-envelope
-      - title: RSS
+      - title: RSS订阅源
         link: atom.xml
         icon: anzhiyu-icon-rss
   list:
@@ -670,9 +670,9 @@ google_adsense:
 
 # 手动插入广告
 # ad:
-#   index:
-#   aside:
-#   post:
+#   index: 测试
+#   aside: 测试
+#   post: 测试
 
 # 站长验证
 # --------------------------------------

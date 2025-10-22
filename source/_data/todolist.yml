@@ -39,3 +39,30 @@
   todo_list:
     - content: 只想宅家
       completed: true
+
+- class_name: 梦想技术栈
+  seat: left
+  todo_list:
+    - content: HTML
+      completed: true
+    - content: CSS
+      completed: true
+    - content: JavaScript
+      completed: true
+    - content: PHP
+      completed: false
+    - content: SQL
+      completed: false
+    - content: Vuejs
+      completed: false
+    - content: Nodejs
+      completed: true
+    - content: Pug
+      completed: true
+    - content: Python
+      completed: false
+    - content: C++
+      completed: true
+    - content: Java
+      completed: false
+    
