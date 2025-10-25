@@ -67,6 +67,14 @@
     siteshot: https://image.thum.io/get/width/800/crop/1600/allowJPG/wait/20/ptoe.cc/https://ptoe.cc
     color: vip
     tag: 
+    
+  - name: 猫普的精神世界
+    link: https://maplezz.com
+    avatar: https://maplezz.com/favicon/avatar.webp
+    descr: 一个独立开发者的精神自留地
+    siteshot: https://image.thum.io/get/width/800/crop/1600/allowJPG/wait/20/anheyu.com/https://maplezz.com
+    color: vip
+    tag: 
 
 - class_name: 框架
   flink_style: flexcard
@@ -96,14 +104,6 @@
     avatar: https://api.minio.yyds.pink/moony/files/2025/02/YU%20logo%20-%20%E6%AD%A3%E6%96%B9%E5%BD%A2.svg
     descr: 回忆航线是个人维护站点，用于分享个人日常分享
     siteshot: https://image.thum.io/get/width/800/crop/1600/allowJPG/wait/20/www.kunkunyu.com/https://www.kunkunyu.com/
-    color: vip
-    tag: 
-
-  - name: 猫普的精神世界
-    link: https://maplezz.com
-    avatar: https://maplezz.com/favicon/avatar.webp
-    descr: 一个独立开发者的精神自留地
-    siteshot: https://image.thum.io/get/width/800/crop/1600/allowJPG/wait/20/maplezz.com/https://maplezz.com
     color: vip
     tag: 
 
