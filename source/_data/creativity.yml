@@ -1,14 +1,14 @@
 - class_name: 开启创造力
   creativity_list:
-    - name: Java
-      color: "#fff"
-      icon: https://bu.dusays.com/2023/04/09/643293b1184e9.jpg
-    - name: Docker
-      color: "#57b6e6"
-      icon: https://bu.dusays.com/2023/04/09/643293b0f0abe.png
-    - name: Photoshop
-      color: "#4082c3"
-      icon: https://bu.dusays.com/2022/12/15/639aa3a5c240e.png
+    # - name: Java
+    #   color: "#fff"
+    #   icon: https://bu.dusays.com/2023/04/09/643293b1184e9.jpg
+    # - name: Docker
+    #   color: "#57b6e6"
+    #   icon: https://bu.dusays.com/2023/04/09/643293b0f0abe.png
+    # - name: Photoshop
+    #   color: "#4082c3"
+    #   icon: https://bu.dusays.com/2022/12/15/639aa3a5c240e.png
     - name: Node
       color: "#333"
       icon: https://npm.elemecdn.com/anzhiyu-blog@2.1.1/img/svg/node-logo.svg
@@ -30,12 +30,12 @@
     - name: HTML
       color: "#e9572b"
       icon: https://bu.dusays.com/2022/12/15/639aa3a5c241c.png
-    - name: Git
-      color: "#df5b40"
-      icon: https://bu.dusays.com/2023/04/09/643293b10ccdd.webp
+    # - name: Git
+    #   color: "#df5b40"
+    #   icon: https://bu.dusays.com/2023/04/09/643293b10ccdd.webp
     - name: C++
       color: "#00599C"
       icon: https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png
-    - name: PHP
-      color: "#8993be"
-      icon: https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png
+    # - name: PHP
+    #   color: "#8993be"
+    #   icon: https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/1200px-PHP-logo.svg.png
