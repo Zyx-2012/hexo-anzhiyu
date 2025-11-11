@@ -192,7 +192,7 @@ mathjax:
 # KaTeX
 katex:
   enable: true
-  per_page: true
+  per_page: false
   hide_scrollbar: true
 
 # 图片 (图片设置)
@@ -1415,7 +1415,7 @@ CDN:
     # sharejs:
     # sharejs_css:
     # mathjax:
-    # katex:
+    # katex: https://cdn.cbd.int/katex@0.16.0/dist/katex.min.js
     # katex_copytex:
     # mermaid:
     # canvas_ribbon:
