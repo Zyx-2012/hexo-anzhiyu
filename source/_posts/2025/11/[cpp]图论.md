@@ -10,11 +10,11 @@ tags:
   - Dijkstra算法
   - Kahn算法
   - Tarjan算法
+  - A*算法
 categories:
   - 教程
 abbrlink: 10f14ed7
-date: 2025-11-09 12:41:45
-updated: 2025-11-09 13:33:21
+date: 2025-11-22 15:52:34
 ---
 
 # 首
@@ -259,4 +259,189 @@ int main() {
     return 0;
 }
 ```
+
+
+
+## 最短路径
+
+最短路是图论里最常见也最实用的一类问题：给定起点（有时还有终点），在图上找一条代价（权重、时间、距离）最小的路径。CSP-S 和很多比赛会经常考到这类题。下面按风格把两种常用算法写清：**Dijkstra**（单源非负权最短路）和 **A\***（启发式寻路，适合单对点、能用启发函数加速的场景）。
+
+> 术语说明：`adj` 用邻接表，边用 `(v, w)` 表示，变量习惯 `u, v, w`。  
+> 代码风格偏竞赛模板（万能头、`using namespace std`、`i++`循环等）。
+
+---
+
+### Dijkstra 算法（单源最短路，非负权）
+
+#### 思路
+从起点出发，每次“松弛”当前距离最小的未确定点，直到处理完所有点——优先队列是关键。
+
+#### 适用条件
+- 图为稀疏或中等稠密（`m` 较大时也能用，但复杂度显现）；
+- 边权 **非负**（否则需要 Bellman-Ford、SPFA 或特殊处理）。
+
+#### 复杂度
+使用二叉堆/优先队列：`O((n + m) log n)`（常写作 `O(m log n)`）。
+
+#### 代码模板
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+const int INF = 0x3f3f3f3f;
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int n, m;
+    cin >> n >> m;
+    vector<vector<pair<int,int>>> adj(n + 1);
+    for (int i = 0; i < m; i++) {
+        int u, v, w;
+        cin >> u >> v >> w;
+        adj[u].push_back({v, w});
+        // 如果是无向图，记得加反向边
+        // adj[v].push_back({u, w});
+    }
+
+    int s; // 起点
+    cin >> s;
+    vector<int> dist(n + 1, INF);
+    vector<char> vis(n + 1, 0);
+    priority_queue<pair<int,int>, vector<pair<int,int>>, greater<pair<int,int>>> pq;
+    dist[s] = 0;
+    pq.push({0, s});
+
+    while (!pq.empty()) {
+        auto cur = pq.top(); pq.pop();
+        int d = cur.first, u = cur.second;
+        if (vis[u]) continue;
+        vis[u] = 1;
+        // 如果想在弹出时就知道是最终最短距离，使用 vis 标记是安全的
+        for (auto ed : adj[u]) {
+            int v = ed.first, w = ed.second;
+            if (!vis[v] && d + w < dist[v]) {
+                dist[v] = d + w;
+                pq.push({dist[v], v});
+            }
+        }
+    }
+
+    // 输出：dist[i]（若为 INF 则表示不可达）
+    for (int i = 1; i <= n; i++) {
+        if (dist[i] == INF) cout << "INF ";
+        else cout << dist[i] << ' ';
+    }
+    cout << '\n';
+    return 0;
+}
+```
+
+#### 常见陷阱 / 优化
+
+* 别忘了边权非负的前提；有负权边要用 Bellman-Ford 或 Johnson。
+* 对于稠密图（`m ≈ n^2`）用 `O(n^2)` 的数组实现（不带堆）可能更快。
+* 如果只需要到某个单一目标的最短路，可以在弹出目标节点时提前退出（小优化）。
+
+---
+
+### A* 算法（启发式单源-单目标最短路）
+
+#### 思路
+
+在 Dijkstra 的基础上加入启发估价 `h(x)`（从 x 到终点的估计代价），优先扩展 `f(x)=g(x)+h(x)`（`g` 为从起点到 x 的实际代价）。如果 `h` 是**可接受（admissible）**的（永远不高估真实代价），A* 能保证找到最短路径，并且通常比 Dijkstra 扩展更少的结点。
+
+#### 适用条件
+
+* 适合找 **单源到单目标** 的最短路（如地图寻路、网格题、点对最优路径）。
+* 需要能设计一个**快速计算且可接受**的启发函数 `h(x)`（例如欧氏距离、曼哈顿距离等）。
+* 在最坏情况下（`h(x)=0`）退化为 Dijkstra。
+
+#### 复杂度
+
+理论上依赖于 `h` 的好坏。若 `h` 很弱，复杂度接近 Dijkstra；若 `h` 很强（接近真实距离），扩展结点可以大幅减少。一般无法给出严格的多项式界定（依启发函数而定）。
+
+#### 何为“可接受（admissible）”？
+
+`h(x)` 对任意结点 x，都不能超过从 x 到目标的实际最短代价（即低估或等于真实代价）。这保证了 A* 的最优性。
+
+#### 代码模板（网格 / 通用图形式 - C++）
+
+下面是一个通用模板（把启发函数留作可替换部分）。模板里假设节点用整数标识，且能从 `heuristic(u, goal)` 获得估价。
+
+```cpp
+#include <bits/stdc++.h>
+using namespace std;
+#define ll long long
+const int INF = 0x3f3f3f3f;
+
+int heuristic(int u, int goal) {
+    // 在具体题目里实现启发函数（必须满足 admissible）
+    // 例如在网格上用曼哈顿距离或欧氏距离（取整）等
+    return 0; // 默认退化为 Dijkstra
+}
+
+int main() {
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    int n, m;
+    cin >> n >> m;
+    vector<vector<pair<int,int>>> adj(n + 1);
+    for (int i = 0; i < m; i++) {
+        int u, v, w;
+        cin >> u >> v >> w;
+        adj[u].push_back({v, w});
+        // 若无向图，加反向边
+    }
+    int s, t;
+    cin >> s >> t;
+
+    vector<int> g(n + 1, INF); // 实际代价 g(x)
+    vector<char> closed(n + 1, 0);
+    // pq 元素：{ f = g + h, node, g }
+    using T = tuple<int,int,int>;
+    priority_queue<T, vector<T>, greater<T>> pq;
+
+    g[s] = 0;
+    pq.push({heuristic(s, t), s, 0});
+
+    while (!pq.empty()) {
+        auto [f, u, gu] = pq.top(); pq.pop();
+        if (closed[u]) continue;
+        closed[u] = 1;
+        if (u == t) {
+            cout << gu << '\n'; // 找到目标，gu 即最短距离
+            return 0;
+        }
+        for (auto ed : adj[u]) {
+            int v = ed.first, w = ed.second;
+            if (closed[v]) continue;
+            if (gu + w < g[v]) {
+                g[v] = gu + w;
+                int fv = g[v] + heuristic(v, t);
+                pq.push({fv, v, g[v]});
+            }
+        }
+    }
+
+    // 不可达
+    cout << "orz\n";
+    return 0;
+}
+```
+
+#### 在网格上的 A*（启发函数示例）
+
+* **曼哈顿距离**（4-连通格子）：`h = |x1 - x2| + |y1 - y2|`
+* **欧氏距离（取整）**：适用于允许斜向移动且代价与距离成正比的情况
+* **Chebyshev 距离**：适用于 8-连通且斜向与直向代价一样的情况
+
+记住：必须保证 `h` 不会高估真实最短路，否则可能得到非最优解。
+
+#### 实战建议 / 调参
+
+* 如果题目是普通图且要从一个起点求到所有点的距离，用 Dijkstra。A* 主要用于“有明确目标且能写出好启发函数”的场景。
+* 在稀疏且目标明确的情形下，A* 往往比 Dijkstra 快，因为它把搜索“引导”向目标，省掉很多无关分支。
+* 若启发函数计算开销大，需权衡：`h` 省掉的扩展结点是否能抵消计算 `h` 的成本。
+* 对于复杂几何图或带障碍的地图，常把 `h` 做得略保守但高效（例如预处理一些近似距离表）。
 
