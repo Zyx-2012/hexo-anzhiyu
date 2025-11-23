@@ -3,9 +3,7 @@ title: 图论
 cover: '/img/blog/[cpp]图论/cover.webp'
 katex: true
 tags:
-  - cpp
   - 图论
-  - NOI
   - Prim算法
   - Dijkstra算法
   - Kahn算法
