@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>SVG 徽章（Badge）生成器 — 单文件</title>
+  <title>SVG 徽章（Badge）生成器 — 单文件（已修复圆角拼接）</title>
   <style>
     :root{font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;}
     body{padding:18px;background:#0f172a;color:#e6eef8}
@@ -23,7 +23,7 @@
 <body>
   <div class="card">
     <h3 style="margin:0 0 8px">SVG 徽章生成器（单文件）</h3>
-    <small>可上传图标或使用图标链接；设置左右两端文字与颜色；实时预览并导出 SVG 代码。</small>
+    <small>已修复：左右两部分拼接处保持为直角，外轮廓为统一圆角（视觉上不再像两个拼接的圆角矩形）。</small>
 
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
       <div>
@@ -126,7 +126,7 @@
     const rightColor = rightColorEl.value || '#4f46e5';
     const iconUrl = iconUrlEl.value && iconUrlEl.value.trim();
     const height = Math.max(12, parseInt(heightEl.value)||20);
-    const rx = parseInt(rxEl.value)||3;
+    const rx = Math.max(0, parseInt(rxEl.value)||3);
     const fontSize = Math.round(height * 0.55); // heuristic
     const padding = Math.round(height * 0.6);
     const iconSize = Math.round(height * 0.92);
@@ -148,20 +148,29 @@
     const rightTextX = Math.round(leftWidth + rightWidth/2);
     const textY = Math.round((height + fontSize*0.35) / 2);
 
-    // build svg string
+    // Build SVG using a rounded clipPath so outer corners are rounded while left/right fills remain rectangular —
+    // this avoids rounded corners at the inner seam.
     let svg = [];
     svg.push(`<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${totalWidth}" height="${height}" viewBox="0 0 ${totalWidth} ${height}" role="img" aria-label="${escapeXml(leftText+' '+rightText)}">`);
-    svg.push(`<defs><linearGradient id="ggrad" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".08"/><stop offset="1" stop-opacity=".08"/></linearGradient></defs>`);
-    svg.push(`<g clip-path="url(#clip0)">`);
-    svg.push(`<rect width="${leftWidth}" height="${height}" fill="${leftColor}" rx="${rx}"/>`);
-    svg.push(`<rect x="${leftWidth}" width="${rightWidth}" height="${height}" fill="${rightColor}" rx="${rx}"/>`);
-    svg.push(`</g>`);
-    svg.push(`<rect width="${totalWidth}" height="${height}" fill="url(#ggrad)" rx="${rx}" />`);
+    svg.push(`<defs>`);
+    svg.push(`<clipPath id="badge-clip"><rect x="0" y="0" width="${totalWidth}" height="${height}" rx="${rx}" ry="${rx}"/></clipPath>`);
+    svg.push(`<linearGradient id="ggrad" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".08"/><stop offset="1" stop-opacity=".08"/></linearGradient>`);
+    svg.push(`</defs>`);
 
+    // Group containing the two rectangular fills, clipped by rounded rect — outer corners rounded, inner seam square
+    svg.push(`<g clip-path="url(#badge-clip)">`);
+    svg.push(`<rect x="0" y="0" width="${leftWidth}" height="${height}" fill="${leftColor}"/>`);
+    svg.push(`<rect x="${leftWidth}" y="0" width="${rightWidth}" height="${height}" fill="${rightColor}"/>`);
+    svg.push(`</g>`);
+
+    // subtle overlay gradient for depth
+    svg.push(`<rect x="0" y="0" width="${totalWidth}" height="${height}" fill="url(#ggrad)" clip-path="url(#badge-clip)"/>`);
+
+    // icon (if any) — placed on top
     if(hasIcon && iconHref){
       const imgX = 4;
       const imgY = Math.round((height - iconSize)/2);
-      svg.push(`<image x="${imgX}" y="${imgY}" width="${iconSize}" height="${iconSize}" preserveAspectRatio="xMidYMid meet" xlink:href="${iconHref}" />`);
+      svg.push(`<image x="${imgX}" y="${imgY}" width="${iconSize}" height="${iconSize}" preserveAspectRatio="xMidYMid meet" xlink:href="${iconHref}" clip-path="url(#badge-clip)" />`);
     }
 
     // texts (centered)
