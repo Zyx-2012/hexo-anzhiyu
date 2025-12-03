@@ -380,7 +380,7 @@ comments:
   # lazyload: 当评论元素进入浏览器视口时加载评论系统。
   # 如果设置为 true，评论计数将无效
   lazyload: false
-  count: false # 在文章的 top_img 中显示评论计数
+  count: true # 在文章的 top_img 中显示评论计数
   card_post_count: false # 在主页显示评论计数
 
 # valine
@@ -491,7 +491,7 @@ footer:
     since: 2025
   custom_text:
   runtime:
-    enable: true
+    enable: false
     launch_time: 9/1/2025 15:35:42 # 网站上线时间
     work_img: /img/xiaocheng-all/xiaocheng-class.svg
     work_description: "我不想上课啊 :("
@@ -1343,7 +1343,7 @@ peoplecanvas:
 dynamicEffect:
   postTopWave: true # 文章顶部波浪效果
   postTopRollZoomInfo: true # 文章顶部滚动时缩放
-  pageCommentsRollZoom: false # 非文章页面评论滚动时缩放显示（仅仅Twikoo生效）
+  pageCommentsRollZoom: true # 非文章页面评论滚动时缩放显示（仅仅Twikoo生效）
 
 # 注入
 # 将代码插入到头部 </head> 之前 和 底部 </body> 之前

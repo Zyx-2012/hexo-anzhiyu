@@ -28,7 +28,7 @@ type: "about"
 
 ## 当前常用系统
 
-windows11Pro
+Windows 11 Pro ~~(高大上)~~
 
 ## 我的域名
 
