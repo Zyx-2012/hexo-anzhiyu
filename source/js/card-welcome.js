@@ -1,15 +1,14 @@
 window.IP_CONFIG = {
-    API_KEY: 'khO6TSIFqv4gMHz85fnNOie5DU', // API密钥 申请地址：https://api.76.al/ 
+    API_KEY: '',
     BLOG_LOCATION: {
-        lng: 116.487767, // 经度
-        lat: 39.756987 // 纬度
+        lng: 116.487767,
+        lat: 39.756987
     },
-    CACHE_DURATION: 1000 * 60 * 30, // 可配置缓存时间(默认1小时)
-    HOME_PAGE_ONLY: true, // 是否只在首页显示 开启后其它页面将不会显示这个容器
+    CACHE_DURATION: 1000 * 60 * 10,
+    HOME_PAGE_ONLY: true,
 };
 
 const insertAnnouncementComponent = () => {
-    // 获取所有公告卡片
     const announcementCards = document.querySelectorAll('.card-widget.card-announcement');
     if (!announcementCards.length) return;
 
@@ -17,19 +16,210 @@ const insertAnnouncementComponent = () => {
         announcementCards.forEach(card => card.remove());
         return;
     }
-    
+
     if (!document.querySelector('#welcome-info')) return;
     fetchIpInfo();
 };
 
 const getWelcomeInfoElement = () => document.querySelector('#welcome-info');
 
-const fetchIpData = async () => {
-    const response = await fetch(`https://api.nsmao.net/api/ip/query?key=${encodeURIComponent(IP_CONFIG.API_KEY)}`);
-    if (!response.ok) throw new Error('网络响应不正常');
-    return await response.json();
+/* ---------- 地名中译层 ---------- */
+const provinceMapCN = {
+    "Beijing": "北京市",
+    "Tianjin": "天津市",
+    "Hebei": "河北省",
+    "Shanxi": "山西省",
+    "Inner Mongolia": "内蒙古自治区",
+    "Liaoning": "辽宁省",
+    "Jilin": "吉林省",
+    "Heilongjiang": "黑龙江省",
+    "Shanghai": "上海市",
+    "Jiangsu": "江苏省",
+    "Zhejiang": "浙江省",
+    "Anhui": "安徽省",
+    "Fujian": "福建省",
+    "Jiangxi": "江西省",
+    "Shandong": "山东省",
+    "Henan": "河南省",
+    "Hubei": "湖北省",
+    "Hunan": "湖南省",
+    "Guangdong": "广东省",
+    "Guangxi": "广西壮族自治区",
+    "Hainan": "海南省",
+    "Sichuan": "四川省",
+    "Guizhou": "贵州省",
+    "Yunnan": "云南省",
+    "Tibet": "西藏自治区",
+    "Shaanxi": "陕西省",
+    "Gansu": "甘肃省",
+    "Qinghai": "青海省",
+    "Ningxia": "宁夏回族自治区",
+    "Xinjiang": "新疆维吾尔自治区",
+    "Taiwan": "台湾省",
+    "Hong Kong": "香港特别行政区",
+    "Macau": "澳门特别行政区"
 };
 
+const cityMapCN = {
+    // 国内常见
+    "Beijing": "北京市",
+    "Nanjing": "南京市",
+    "Suzhou": "苏州市",
+    "Hangzhou": "杭州市",
+    "Guangzhou": "广州市",
+    "Shenzhen": "深圳市",
+    "Yangjiang": "阳江市",
+    "Zhengzhou": "郑州市",
+    "Xinyang": "信阳市",
+    "Nanyang": "南阳市",
+    "Zhumadian": "驻马店市",
+    "Kaifeng": "开封市",
+    "Luoyang": "洛阳市",
+    "Huanggang": "黄冈市",
+    // 港澳台
+    "Hong Kong": "香港",
+    "Macau": "澳门",
+    "Taipei": "台北市",
+    // 国际城市常见映射（补常用）
+    "New York": "纽约",
+    "Los Angeles": "洛杉矶",
+    "San Francisco": "旧金山",
+    "Washington": "华盛顿",
+    "Tokyo": "东京",
+    "Osaka": "大阪",
+    "Seoul": "首尔",
+    "Paris": "巴黎",
+    "London": "伦敦",
+    "Moscow": "莫斯科",
+    "Berlin": "柏林",
+    "Sydney": "悉尼",
+    "Toronto": "多伦多",
+    "Vancouver": "温哥华"
+};
+
+const countryAliasCN = {
+    "United States": "美国",
+    "United Kingdom": "英国",
+    "South Korea": "韩国",
+    "North Korea": "朝鲜",
+    "Russia": "俄罗斯",
+    "Japan": "日本",
+    "France": "法国",
+    "Germany": "德国",
+    "Australia": "澳大利亚",
+    "Canada": "加拿大",
+    "China": "中国",
+    "Hong Kong": "中国",
+    "Macau": "中国",
+    "Taiwan": "中国"
+};
+
+function translateCountryToCN(rawCountry) {
+    if (!rawCountry) return '';
+    // 如果是国家代码（CN/US），尝试用 Intl.DisplayNames
+    try {
+        const code = String(rawCountry).trim();
+        // 尝试检测是否是2字母国家码
+        if (/^[A-Za-z]{2}$/.test(code)) {
+            const dn = new Intl.DisplayNames(['zh'], { type: 'region' });
+            const nameCN = dn.of(code.toUpperCase());
+            if (nameCN) return nameCN;
+        }
+    } catch (e) {}
+    // 直接按 alias 或者基本映射处理
+    const s = String(rawCountry).trim();
+    if (countryAliasCN[s]) return countryAliasCN[s];
+    // 常见英文名首字母大小写差异
+    const normalized = s.replace(/_/g, ' ').replace(/\s+/g, ' ').trim();
+    if (countryAliasCN[normalized]) return countryAliasCN[normalized];
+    // 最后尝试 Intl with full string (works if input is English country name)
+    try {
+        const dn2 = new Intl.DisplayNames(['zh'], { type: 'region' });
+        // Intl expects region code; but sometimes it can accept names? If not, fallback to original.
+        // We'll try to find a region code by brute force (rarely necessary).
+        return normalized;
+    } catch (e) {
+        return normalized;
+    }
+}
+
+function translateProvince(provRaw, countryCN) {
+    if (!provRaw) return '';
+    const prov = String(provRaw).trim();
+    // 如果国家判定为中国（或包含“中国”），优先用 provinceMapCN
+    if (countryCN && countryCN.includes('中国')) {
+        // 常见英文 province 名称直接命中
+        if (provinceMapCN[prov]) return provinceMapCN[prov];
+        // 有些数据可能是小写或带 suffix 的，尝试简单匹配
+        const key = Object.keys(provinceMapCN).find(k => k.toLowerCase() === prov.toLowerCase());
+        if (key) return provinceMapCN[key];
+        // 另外尝试去掉 "Province/State" 后缀
+        const p2 = prov.replace(/( Province| province| State| state| Region| region)$/i, '').trim();
+        const key2 = Object.keys(provinceMapCN).find(k => k.toLowerCase() === p2.toLowerCase());
+        if (key2) return provinceMapCN[key2];
+        // 如无法识别，尝试把单词首字母大写并加上省后缀（兜底）
+        return prov + "省";
+    } else {
+        // 非中国地区，直接返回原值（或已被 country 转换为中文时无需改）
+        return prov;
+    }
+}
+
+function translateCity(cityRaw, provCN, countryCN) {
+    if (!cityRaw) return '';
+    const city = String(cityRaw).trim();
+    // 先查 cityMapCN
+    if (cityMapCN[city]) return cityMapCN[city];
+    const key = Object.keys(cityMapCN).find(k => k.toLowerCase() === city.toLowerCase());
+    if (key) return cityMapCN[key];
+
+    // 对港澳台或中国内地尝试补后缀（例如 "Beijing" -> "北京市"）
+    if (countryCN && countryCN.includes('中国')) {
+        // 如果省份是北京市/上海市之类，城市可能为空或同名，直接返回省名第一段
+        if (provCN && /(市|自治区|特别行政区)/.test(provCN)) {
+            return provCN.replace(/省|自治区|特别行政区|市$/, '') + "市";
+        }
+        // 尝试添加“市”后缀作为兜底
+        if (!/市|县|区|镇|乡/.test(city)) return city + "市";
+    }
+
+    // 国际城市，如 New York -> 纽约 的映射已经有限，未命中则返回原文（尽量保留可读性）
+    return city;
+}
+
+/* ---------- 从 ip.sb 获取并转换为原 nsmao 风格 ---------- */
+const fetchIpData = async () => {
+    const url = 'https://api.ip.sb/geoip';
+    const resp = await fetch(url, { cache: "no-store" });
+    if (!resp.ok) throw new Error('网络响应不正常：' + resp.status);
+    const raw = await resp.json();
+
+    const ip = raw.ip || raw.query || raw.ip_address || '';
+    const lon = raw.longitude ?? raw.lon ?? raw.lng ?? raw.longitude_deg ?? raw.long;
+    const lat = raw.latitude ?? raw.lat ?? raw.latitude_deg;
+    const rawCountry = raw.country || raw.country_name || raw.country_name_en || raw.countryCode || raw.country_code || '';
+    const rawRegion = raw.region || raw.regionName || raw.province || raw.state || raw.region_name || '';
+    const rawCity = raw.city || raw.city_name || raw.town || raw.locality || '';
+
+    // 先把国家转成中文（尽量可靠）
+    const countryCN = translateCountryToCN(rawCountry);
+
+    // 再把省/地区、城市转成中文
+    const provCN = translateProvince(rawRegion, countryCN);
+    const cityCN = translateCity(rawCity, provCN, countryCN);
+
+    const data = {
+        lng: typeof lon === 'number' ? lon : (parseFloat(lon) || 0),
+        lat: typeof lat === 'number' ? lat : (parseFloat(lat) || 0),
+        country: countryCN || '',
+        prov: provCN || '',
+        city: cityCN || ''
+    };
+
+    return { data, ip };
+};
+
+/* ---------- 其余显示/缓存等逻辑（保留并复用你原来的逻辑） ---------- */
 const showWelcome = ({
     data,
     ip
@@ -46,8 +236,12 @@ const showWelcome = ({
     const welcomeInfo = getWelcomeInfoElement();
     if (!welcomeInfo) return;
 
-    const dist = calculateDistance(lng, lat);
-    const ipDisplay = formatIpDisplay(ip);
+    let dist = '未知';
+    if (Number.isFinite(lng) && Number.isFinite(lat) && (lng !== 0 || lat !== 0)) {
+        dist = calculateDistance(lng, lat);
+    }
+
+    const ipDisplay = formatIpDisplay(ip || '');
     const pos = formatLocation(country, prov, city);
 
     welcomeInfo.style.display = 'block';
@@ -56,7 +250,7 @@ const showWelcome = ({
 };
 
 const calculateDistance = (lng, lat) => {
-    const R = 6371; // 地球半径(km)
+    const R = 6371;
     const rad = Math.PI / 180;
     const dLat = (lat - IP_CONFIG.BLOG_LOCATION.lat) * rad;
     const dLon = (lng - IP_CONFIG.BLOG_LOCATION.lng) * rad;
@@ -66,14 +260,18 @@ const calculateDistance = (lng, lat) => {
 
     return Math.round(R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a)));
 };
-const formatIpDisplay = (ip) => ip.includes(":") ? "<br>好复杂，咱看不懂~(ipv6)" : ip;
+const formatIpDisplay = (ip) => {
+    if (!ip) return '未知IP';
+    return ip.includes(":") ? "<br>好复杂，咱看不懂~(ipv6)" : ip;
+};
 const formatLocation = (country, prov, city) => {
-    return country ? (country === "中国" ? `${prov} ${city}` : country) : '神秘地区';
+    if (!country) return '神秘地区';
+    return country === "中国" ? `${prov || ''} ${city || ''}`.trim() || '中国' : country;
 };
 
 const generateWelcomeMessage = (pos, dist, ipDisplay, country, prov, city) => `
     欢迎来自 <b>${pos}</b> 的小友💖<br>
-    你当前距博主约 <b>${dist}</b> 公里！<br>
+    ${dist === '未知' ? '' : `你当前距博主约 <b>${dist}</b> 公里！<br>`}
     你的IP地址：<b class="ip-address">${ipDisplay}</b><br>
     ${getTimeGreeting()}<br>
     Tip：<b>${getGreeting(country, prov, city)}🍂</b>
@@ -131,6 +329,7 @@ const addStyles = () => {
             margin: 0 5px;
             color: var(--anzhiyu-main);
             transition: transform 0.3s ease;
+            cursor: pointer;
         }
         #retry-button:hover {
             transform: rotate(180deg);
@@ -146,6 +345,7 @@ const addStyles = () => {
             background-color: var(--anzhiyu-main);
             color: white;
             transition: opacity 0.3s ease;
+            cursor: pointer;
         }
         .permission-dialog button:hover {
             opacity: 0.8;
@@ -154,13 +354,13 @@ const addStyles = () => {
     document.head.appendChild(style);
 };
 
-// 位置权限相关函数
 const checkLocationPermission = () => localStorage.getItem('locationPermission') === 'granted';
 const saveLocationPermission = (permission) => {
     localStorage.setItem('locationPermission', permission);
 };
 const showLocationPermissionDialog = () => {
     const welcomeInfoElement = document.getElementById("welcome-info");
+    if (!welcomeInfoElement) return;
     welcomeInfoElement.innerHTML = `
         <div class="permission-dialog">
             <div class="error-icon">❓</div>
@@ -176,7 +376,7 @@ const showLocationPermissionDialog = () => {
             const permission = action === 'allow' ? 'granted' : 'denied';
             handleLocationPermission(permission);
         }
-    });
+    }, { once: true });
 };
 const handleLocationPermission = (permission) => {
     saveLocationPermission(permission);
@@ -199,12 +399,18 @@ const getIpInfoFromCache = () => {
     const cached = localStorage.getItem(IP_CACHE_KEY);
     if (!cached) return null;
 
-    const { data, timestamp } = JSON.parse(cached);
-    if (Date.now() - timestamp > IP_CONFIG.CACHE_DURATION) {
+    try {
+        const { data, timestamp } = JSON.parse(cached);
+        if (!data || !timestamp) { localStorage.removeItem(IP_CACHE_KEY); return null; }
+        if (Date.now() - timestamp > IP_CONFIG.CACHE_DURATION) {
+            localStorage.removeItem(IP_CACHE_KEY);
+            return null;
+        }
+        return data;
+    } catch (e) {
         localStorage.removeItem(IP_CACHE_KEY);
         return null;
     }
-    return data;
 };
 const setIpInfoCache = (data) => {
     localStorage.setItem(IP_CACHE_KEY, JSON.stringify({
@@ -223,20 +429,26 @@ const fetchIpInfo = async () => {
 
     const cachedData = getIpInfoFromCache();
     if (cachedData) {
-        showWelcome(cachedData);
+        if (cachedData.data && cachedData.ip) {
+            showWelcome(cachedData);
+        } else {
+            showWelcome({ data: cachedData, ip: cachedData.ip || '' });
+        }
         return;
     }
 
     try {
-        const data = await fetchIpData();
-        setIpInfoCache(data);
-        showWelcome(data);
+        const result = await fetchIpData();
+        if (!result || !result.data) throw new Error('无效的返回数据');
+        setIpInfoCache(result);
+        showWelcome(result);
     } catch (error) {
         console.error('获取IP信息失败:', error);
         showErrorMessage();
     }
 };
 
+/* ---------- 原有 greetings / getGreeting / getTimeGreeting / showErrorMessage 等保持不变 ---------- */
 const greetings = {
     "中国": {
         "北京市": "北——京——欢迎你~~~",
@@ -299,7 +511,7 @@ const greetings = {
     },
     "美国": "Let us live in peace!",
     "日本": "よろしく、一緒に桜を見ませんか",
-    "俄罗斯": "干了这瓶伏特加！",
+    "俄罗斯": "Водка в горюче :)",
     "法国": "C'est La Vie",
     "德国": "Die Zeit verging im Fluge.",
     "澳大利亚": "一起去大堡礁吧！",
@@ -329,6 +541,7 @@ const getTimeGreeting = () => {
 
 const showErrorMessage = (message = '抱歉，无法获取信息') => {
     const welcomeInfoElement = document.getElementById("welcome-info");
+    if (!welcomeInfoElement) return;
     welcomeInfoElement.innerHTML = `
         <div class="error-message">
             <div class="error-icon">😕</div>
@@ -337,14 +550,14 @@ const showErrorMessage = (message = '抱歉，无法获取信息') => {
         </div>
     `;
 
-    document.getElementById('retry-button').addEventListener('click', fetchIpInfo);
+    const retry = document.getElementById('retry-button');
+    if (retry) retry.addEventListener('click', fetchIpInfo);
 };
 
 const isHomePage = () => {
     return window.location.pathname === '/' || window.location.pathname === '/index.html';
 };
 
-// 初始化
 document.addEventListener('DOMContentLoaded', () => {
     addStyles();
     insertAnnouncementComponent();
