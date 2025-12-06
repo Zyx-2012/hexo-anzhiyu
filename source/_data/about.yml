@@ -67,7 +67,7 @@
   game:
     game_tips: 爱好游戏
     game_title: Minecraft
-    game_uid: "ID(离线，以后有钱会支持正版): Zyx_2012"
+    game_uid: ""
     game_bg: /img/about/minecraft.png
   comic:
     comic_tips: 爱好番剧
@@ -96,6 +96,3 @@
    - name: longxia-steven
      amount: 2.01
      datatime: 2025-09-06
-   - name: zeabur
-     amount: 35.65/月
-     datatime: 2025-09-01
