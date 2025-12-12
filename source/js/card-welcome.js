@@ -218,8 +218,6 @@ const fetchIpData = async () => {
 
     return { data, ip };
 };
-
-/* ---------- 其余显示/缓存等逻辑（保留并复用你原来的逻辑） ---------- */
 const showWelcome = ({
     data,
     ip

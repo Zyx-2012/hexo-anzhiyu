@@ -30,9 +30,9 @@
     - name: HTML
       color: "#e9572b"
       icon: https://bu.dusays.com/2022/12/15/639aa3a5c241c.png
-    # - name: Git
-    #   color: "#df5b40"
-    #   icon: https://bu.dusays.com/2023/04/09/643293b10ccdd.webp
+    - name: Git
+      color: "#df5b40"
+      icon: https://bu.dusays.com/2023/04/09/643293b10ccdd.webp
     - name: C++
       color: "#00599C"
       icon: https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png
