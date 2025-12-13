@@ -46,8 +46,8 @@
     #   date: 202x/xx/xx xx:xx
     # - content: xxx
     #   date: 202x/xx/xx xx:xx
-    # - content: xxx
-    #   date: 202x/xx/xx xx:xx
+    - content: 今天是南京大屠杀公祭日，请在10:00~10:01为遇难的30万同胞们默哀
+      date: 2025/12/13 10:00
     - content: 为什么……这么快就要到2026年了
       date: 2025/12/06 14:54
     - content: Ruibin生日快乐，和期中考试撞一块很厉害了：）
