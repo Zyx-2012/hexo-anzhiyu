@@ -51,10 +51,10 @@
     selfInfoTips3: 爱好
     selfInfoContent3: 折腾
   personalities:
-    author_name: 逻辑学家
-    personality_type: INTP-A
-    photo_url: /img/zp.jpg
-    personality_img: /img/about/INTP-A.svg
+    author_name: 架构师
+    personality_type: INTJ-A
+    photo_url: /img/bu_cun_zai
+    personality_img: /img/about/INTJ-A.svg
     name_url: https://www.16personalities.com/ch/intp-%E4%BA%BA%E6%A0%BC
   maxim:
     maxim_tips: 座右铭

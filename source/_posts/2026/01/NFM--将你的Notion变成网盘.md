@@ -1,12 +1,13 @@
 ---
 title: Notion-File-Management
-cover: '/img/blog/NFM--将你的Notion变成网盘/cover.webp'
+cover: /img/blog/NFM--将你的Notion变成网盘/cover.webp
 tags:
   - 工具
   - 自创
   - 项目
 categories:
   - 分享
+abbrlink: 8baadfc6
 date: 2026-01-02 12:42:54
 ---
 
