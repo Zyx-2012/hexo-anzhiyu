@@ -23,6 +23,10 @@
   content: "\e624";
 }
 
+.anzhiyu-icon-mc-package:before {
+  content: "\e698";
+}
+
 .anzhiyu-icon-square-poll-vertical:before {
   content: "\e61e";
 }
