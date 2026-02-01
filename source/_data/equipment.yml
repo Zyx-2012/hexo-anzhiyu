@@ -6,14 +6,9 @@
     - title: 生产力
       description: 提升自己生产效率的硬件设备
       equipment_list:
-        - name: 联想显示屏
-          specification: t27qs-20
-          description: CPU带不动的2K分辨率，可惜了
-          image: /img/equipment/t27qs-20.jpg
-          link: https://biz.lenovo.com.cn/product/012040B06.html
         - name: Matebook 14 2022款
           specification: 512G + 16G
-          description: 祖传，等有钱换个华硕（ “华为的子品牌” bushi ）
+          description: 祖传，等有钱换个机械革命
           image: /img/equipment/nbf-16.webp
           link: https://consumer.huawei.com/cn/laptops/matebook-14-2022/specs/
         - name: HUAWEI Mate 20x 5G

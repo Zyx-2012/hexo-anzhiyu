@@ -1,28 +1,28 @@
 # seat控制清单在左栏还是右栏显示，completed控制是否已完成
-- class_name: 网站相关
+- class_name: 折腾相关
   seat: left
   todo_list:
     - content: 建站
       completed: true
     - content: 有自己的服务器（白嫖的不算）
       completed: false
-    - content: 网站获得ICP备案
+    - content: 网站获得ICP备案（等成年）
       completed: false
+    - content: 第一个长期合作项目
+      completed: true
 
 
 - class_name: 想要的东西
   seat: right
   todo_list:
-    - content: 自己配的台式
+    - content: 机械革命翼龙15Pro2024(RTX4070,32GB,1TB款)
       completed: false
     - content: GTS4
       completed: true
-    - content: 联想显示屏
-      completed: true
-    - content: 游戏本
-      completed: false
     - content: 喜德盛hacker500
       completed: true
+    - content: 正版 Minecraft 账号
+      completed: false
 
 - class_name: 想学的技术
   seat: left
@@ -32,6 +32,8 @@
     - content: cpp(GESP达到7级以上)
       completed: false
     - content: 前端（包括纯前端、vue、node等）
+      completed: false
+    - content: C#(WPF)
       completed: false
 
 - class_name: 想去的地方
