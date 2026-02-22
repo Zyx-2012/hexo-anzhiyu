@@ -15,8 +15,8 @@
 - class_name: 想要的东西
   seat: right
   todo_list:
-    - content: 机械革命翼龙15Pro2024(RTX4070,32GB,1TB款)
-      completed: false
+    - content: 机械革命翼龙15Pro2024(RTX4070Laptop,32GB,1TB款)
+      completed: true
     - content: GTS4
       completed: true
     - content: 喜德盛hacker500
