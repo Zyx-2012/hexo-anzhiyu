@@ -6,11 +6,11 @@
     - title: 生产力
       description: 提升自己生产效率的硬件设备
       equipment_list:
-        - name: Matebook 14 2022款
-          specification: 512G + 16G
-          description: 祖传，等有钱换个机械革命
-          image: /img/equipment/nbf-16.webp
-          link: https://consumer.huawei.com/cn/laptops/matebook-14-2022/specs/
+        - name: 翼龙15Pro2024(4070款)
+          specification: 1TB + 32GB
+          description: 太好了用上新电脑了，4070虽然是Laptop但依旧能用（链接是2026款的，我买的是2024的）
+          image: https://wjcc.mechrevo.com/bucket-daa2/storage/website/data/tkc82adah62o0p6vbq3rnl8u92ae
+          link: https://mechrevo.com/cn/products/yi-long-15-pro
         - name: HUAWEI Mate 20x 5G
           specification: 湖蓝色 256G
           description: 华为mate系列最大屏
@@ -21,7 +21,7 @@
       equipment_list:
         - name: Amazfit 跃我 GTS 4
           specification: 黑色
-          description: 非常实用，实时显示配速及心率
+          description: 基本就看时间用
           image: /img/equipment/gts4.webp
           link: https://us.amazfit.com/blogs/product-update/amazfit-gtr-4-gts-4-ota-2-update
     - title: 代步工具
